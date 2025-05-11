@@ -1,0 +1,337 @@
+% CREATE DOCUMENT TYPE
+\documentclass{article}
+
+% CALL PACKAGES
+\usepackage{graphicx} % Required for inserting images
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+
+% HEADER SETTINGS
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+
+% TITLE
+\title{A methodology for developing low-cost integrated remote sensing systems for survey of coastal areas}
+\author{Marcel Rodriguez-Riccelli}
+\date{\today} 
+
+% FIGURE CAPTION FORMATTING
+\usepackage[font=small,labelfont=bf]{caption}
+
+% INDENT SETTINGS
+\setlength{\parindent}{15pt} 
+
+% BEGIN DOCUMENT
+\begin{document}
+
+% COVER PAGE
+\begin{center}
+\thispagestyle{empty}
+\par{UNIVERSITY OF CALIFORNIA \\[.5cm] Santa Barbara} 
+\vspace{1.25cm}
+\par{\huge \thetitle}
+\vspace{1.5cm}
+\par{A Thesis submitted in partial satisfaction of the requirements \\ for the degree Master of Science in Media Arts and Technology}
+\vspace{1cm}
+{by \par}
+\vspace{1cm}
+{\theauthor}
+\vspace{1.5cm}
+\par{Committee in charge:}
+\vspace{1cm}
+\par{Marko Peljhan}
+\vspace{1cm}
+\par{Yon Visell}
+\vspace{1cm}
+\par{Curtis Roads}
+\vspace{2cm}
+\par{\thedate}
+\end{center}
+
+% SIGNATURE PAGE
+\newpage
+\thispagestyle{empty}
+\begin{center}
+\par{The thesis of Marcel Rodriguez-Riccelli is approved.}
+\vspace{2cm}
+\par{\makebox[10cm][l]{\rule{10cm}{0.4pt}}\\
+\makebox[10cm][l]{\textit{Marko Peljhan}}}
+\vspace{1cm}
+\par{\makebox[10cm][l]{\rule{10cm}{0.4pt}}\\
+\makebox[10cm][l]{\textit{Yon Visell}}}
+\vspace{1cm}
+\par{\makebox[10cm][l]{\rule{10cm}{0.4pt}}\\
+\makebox[10cm][l]{\textit{Curtis Roads}}}
+\vspace{2cm}
+\par{\thedate}
+\end{center}
+
+% ABSTRACT
+\newpage
+\fancyhead[C]{ABSTRACT}
+\thispagestyle{fancy}
+\begin{center}
+\par{\thetitle}
+\vspace{.5cm}
+{by \par}
+\vspace{.5cm}
+\par{\theauthor}
+\vspace{.5cm}
+\end{center}
+\doublespacing
+
+\par{It is of no coincidence that most of the world’s megacities are situated in the coastal zone: the coasts that bound earth’s oceans have played a pivotal role in human habitation since its advent, by providing valuable resources in the way of food, commerce, transportation, industry, defense, and recreation. Our understanding of coastal phenomenon has historically been correlated to the development of our civilization, and this trend continues today, as population growth and demographic shifts lead to increased settlement in coastal areas, and warming global climates and sea level rise exacerbate the damage caused by natural disasters which occur at the interface of land and sea or as a result of costal processes.}
+
+\par{For this reason, the goal of coastal science has become to understand, characterize, and predict those processes. Modeling the various processes and features of the coastal area can be used to inform applications such as: natural disaster prediction and prevention, fishery maintenance, sustainable infrastructure planning, and navigation. To have accurate models and maps of coastal processes, there exists a need for wider networks which sample data more regularly. The unstable and perpetually fluctuating nature of the coastal area makes consistent long-term in situ data collection difficult, so remote sensing solutions are required. In decades past, the expenses and difficulties entailed in obtaining and deploying professional-grade remote sensing survey equipment have prohibited regular and widespread data collection. However, modern advancements in pertinent technologies such as the miniaturization of remote sensors, increased performance capabilities of embedded computers, and accuracy of global positioning systems, have enabled the development of low-cost survey technologies which are able to achieve professional-grade resolution and accuracy.}
+
+{The unique challenges associated with collecting data from this area at standards which meet the requirements of scientific regulatory agencies renders necessary the thoughtful consideration of knowledge from a wide range of disciplines when developing sensing systems. Our goal is to aggregate cross-disciplinary knowledge related to and modern practices in remote sensing of coastal environments for use in oceanographical, hydrological, geological, and ecological field research, and outline a generalized method for developing bespoke low-cost integrated remote sensing solutions, as well as offer some of our own. \par} 
+
+{In the first section, we will expand upon this definition by going further into detail about the various physical and societal phenomenon associated with coastal areas. In the second section, we will outline environmental parameters which are obtainable through current remote radiation-based sensing techniques, as well as methods for collection, aggregation, and preparation of those parameters for applied use, in a way which adheres to standards set by regulatory agencies. Lastly, in the third section, we will share examples of low-cost integrated systems for coastal survey  we’ve developed. The sections are organized to reflect the order of operations for our proposed method for planning the development of a workflow for remote sensing based environmental field research: to first consider the features of the environment in which the survey will be conducted, possible use cases for that survey data, the parameters to be measured, how the data will be applied, and the discrete technologies necessary to achieve that application, in order to develop an integrated survey solution which can achieve accurate characterization of processes of interest. \par}
+
+\fancyhead[C]{ABSTRACT}
+\thispagestyle{fancy}
+
+% TABLE OF CONTENTS
+\newpage
+\fancyhead[C]{TABLE OF CONTENTS}
+\thispagestyle{fancy}
+\begin{enumerate}
+    \item Coastal processes
+    \begin{enumerate}
+        \item Hydrology
+        \item Morphology
+        \item Ecology
+        \item Societal relationship
+    \end{enumerate}
+
+    \item Survey, preparation, and application
+    \begin{enumerate}
+        \item Environmental parameters
+        \item Surface models
+        \item Process models
+        \item Local population
+    \end{enumerate}
+
+    \item Proposed solutions
+    \begin{enumerate}
+        \item Survey pole with MBES \& dual antenna GPS
+        \item Large quadrotor for bathymetric LiDAR
+        \item Miniature quadrotor
+        \item Virtual drone development platform
+    \end{enumerate}
+
+    \item References
+    \item Appendix
+\end{enumerate}
+
+% THE NEARSHORE
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+\setcounter{page}{1}
+\section{Coastal processes}
+{\hspace{.5cm} Broadly, a coast is the greater zone extending both landward and seaward from the shoreline (where ocean meets land). There exist several definitions on the extent of the coastal area offered by disparate scientific bodies. Some sources define the coastal zone according to the distance from the shoreline~\textsuperscript{[1]} while others define coasts by the extent of processes which occur as a result of the interface of land and sea.~\textsuperscript{[2]} Within these general differences lie more specific ones: for the former, regulatory bodies from different countries may demarcate the shoreline according to different tidal reference lines.~\textsuperscript{[3]} For the later, practitioners from different fields may include or exclude certain processes from their definition as necessary based on the timescale of the process of interest.~\textsuperscript{[2]} \par}
+
+{The nebulousness of definitions for the coast are a cause of the morphodynamic nature of the area. Hydrodynamic processes occurring at different timescales work simultaneously to continuously transform coasts over time: from short-term transport of sediment caused by local cross-shore wave set-up, to long term eustatic sea level changes which redefine global shorelines from factors such as glaciation and plate tectonics. The importance of these distinctions is manifested in the outcomes for predictive models of coastal morphology: models with strongly embedded equilibrium concepts a have been successful in predicting short-to-medium term (days-to-years) phenomenon than those which occur over long (multi-decadal) timescales.~\textsuperscript{[4]} Coastal managers, scientists, and engineers, have long sought to develop methodologies for predicting shoreline change by modeling these various hydrological processes.~\textsuperscript{[5]} Toward the goal of developing remote sensing solutions to sample environmental parameters for a duration most likely limited by the usual time constraints of a scientific research project, we'll define the coast as the area where sub-decadal oceanic processes serve as a factor in influencing local morphology through sediment transport. \par}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/spatial-and-temporal.png}
+    \caption{A schematic diagram representing approximate spatial and temporal modelling scales that are appropriate to hydrodynamic processes (white box) and morphodynamic features (black box). Reproduced from Hunt et al. (2023) \textsuperscript{[5]}}
+    \label{figure1}
+\end{figure}
+
+{Erosion and deposition of sediment caused by wave action generated by wind blowing over large stretches of ocean is the predominant morphological effect on most coasts. This effect is most noticeable by observing the of the extent of differences in geographical features between coasts which regularly experience high-wave energy to those which do not.~\textsuperscript{[5]}~\textsuperscript{[6]} As waves propagate from the ocean to the nearshore domain (the subaqueous zone commonly spanning 100m directly seaward of the shoreline) they dissipate as depth decreases to beneath their height, and their energy compounds with that of other hydrological processes occurring at different spatial and time scales such as tides and local currents, to dictate an overall circulatory and sedimentary gradient of the area and in turn influence other ecological, geological, and geographical gradients. By this token, characterizing the hydrodynamics of the coastal zone is essential to understanding all other processes there, and the ability to successfully develop methods for sampling them.~\textsuperscript{[7]} \par}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+\subsection{Hydrology}
+
+\begin{figure} 
+    \centering
+    \includegraphics[width=1\linewidth]{images/ocean-wave-energy-schematic.png}
+    \caption{Placeholder for self generated graphic based on this one from Kinsman, 1984\textsuperscript{[14]}}
+    \label{figure2}
+\end{figure}
+
+{\hspace{.5cm}Ocean waves are created when a disturbing force acts on the ocean and a restoring force acts to restore equilibrium. These forces produce waves of varied frequency, wavelength, height, and direction, which compound to constitute the full spectrum of nearshore hydrodynamic activity. \textsuperscript{[6]}~\textsuperscript{[7]}~\textsuperscript{[11]}~\textsuperscript{[14]} The most commonly observable waves are wind waves: those generated by friction drag from wind blowing over an area of the ocean's surface, transferring energy into the to water.~\textsuperscript{[6]}~\textsuperscript{[7]}~\textsuperscript{[8]}~\textsuperscript{[9]}~\textsuperscript{[14]} A sea is area in which strong winds actively work to generate irregularly peaked waves of varied periodicity traveling in a broad spectrum of direction, resulting in a chaotic ocean surface. When energy losses from waves breaking are offset by energy gained from blowing wind, the sea is said to be fully developed or arisen.~\textsuperscript{[9]}~\textsuperscript{[14]}~\textsuperscript{[15]} The power spectra of a fully developed sea, first proposed by Willard Peirson and Lionel Moskowitz, is well defined, and allows forecasters to accurately model wave conditions based on wind speed and direction.~\cref{figure3}.~\textsuperscript{[11]}~\textsuperscript{[15]}\par}
+
+{To describe the processes by which wind generates waves with more \par}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+    \par{\noindent granularity, wind blowing over the ocean stretches the waters surface, and as surface tension works to restore it to equilibrium, capillary (low energy, short wavelength, high frequency) waves, are formed. As wind continues to blow, capillary waves are compounded by wind energy and grow. Capillary waves with a steepness that exceed a wavelength of 1.74 cm become gravity waves. At this threshold, gravity supersedes surface tension as the prevailing restoring force, and works to pull the crest of a wave downward. The water's inertia causes the crests to overshoot and become troughs, inducing a cycle in which water molecules oscillate in a near-frictionless orbit as gravitational forces work to restore the fluid to a state of equilibrium, allowing them to propagate long distances across the ocean's surface.~\textsuperscript{[6]}~\textsuperscript{[9]}~\textsuperscript{[11]} ~\textsuperscript{[14]} As wind activity ceases or waves move away from the area of generation, they are sorted into packets of uniform wavelength and direction.}
+\end{minipage}
+\hspace{.05\textwidth}
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+
+    \vspace{0pt}
+    
+    \includegraphics[width=1\linewidth]{images/developed-sea-power-spectrum.png}
+    \captionof{figure}{Placeholder for self generated version of this Pierson-Moskowitz spectral graph.}
+    \label{figure3}
+    
+    \vspace{.1cm}
+    
+    \par{\noindent Gravity waves have a period around .1 Hz and represent the most energetic band of the spectra.~\textsuperscript{[6]}~\textsuperscript{[10]}~\textsuperscript{[11]}~\textsuperscript{[15]}.}
+    
+    \par{\hspace{0.5cm}All ocean waves propagate across the surface of the ocean as potential energy, and are released as kinetic energy as they're broken through contact with bottom morphologies and spatial features of the nearshore zone and shoreface.~\textsuperscript{[6]}~\textsuperscript{[7]}~\textsuperscript{[9]} Gravity waves (10-s) compound with phenomenon occurring at longer time scales such as infragravity waves (30 - 300-s), as well as tidal modulation and resulting instabilities from longshore currents (10\textsuperscript{2}-10\textsuperscript{3}-s), to}
+    
+\end{minipage}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+
+\par{\noindent create the full spectrum of nearshore gravity-based wave activity.~\textsuperscript{[7]}~\textsuperscript{[9]}~\textsuperscript{[12]}~\textsuperscript{[13]} Extreme events such as tsunamis generated by seismic activity and seiche (resonant rocking of water) produced by sudden change in atmospheric pressure contribute to nearshore wave activity episodically.~\textsuperscript{[7]}}
+
+\par{The disturbing forces which generate tides are gravitational forces from the moon and sun which act on a rotating earth, causing global variation in local ocean surface height. Isaac Newton, in his work \textit{Principa Mathematica}, postulated the Equilibrium Theory of Tides, which described tides as two bulges of heightened sea level on opposite ends of the earth generated purely as the result of astrological forces acting upon the ocean's surface that remains at a state of equilibrium imposed by them.~\textsuperscript{[7]}~\textsuperscript{[9]}~\textsuperscript{[11]} Newton's theory was intentionally limited: it assumes infinitely deep oceans, not sufficient to explain how tidal wave height would exceed the depth of the ocean when considering the speed of solar and lunar positional change relative the earth.}
+
+\par{Pierre-Simon Laplace expanded upon Newton's Equilibrium Theory of Tides by formulating the Dynamic Theory of Tides, which additionally incorporated phenomenon such as friction, the earth's rotation, the Coriolis effect, and the shape of oceanic basins, to more accurately characterize tidal behavior.~\textsuperscript{[7]}~\textsuperscript{[11]} The Dynamic Theory of Tides describes tidal waves that circulate about amphidromic points, where the tidal range is zero, counterclockwise in the Northern Hemisphere and clockwise in the Southern. Models incorporating these principles have been successful in predicting tides in accordance with observed behaviors.~\textsuperscript{[7]}~\textsuperscript{[11]}  When considered locally at coastal zones, tides manifest as visible shifts in the shoreline between low and high tide once (diurnal) or twice (semidiurnal) daily depending on location relative to amphidromic points. These shifts generate longshore currents parallel to all coasts, and cross shore currents where tidal floods and ebbs rush into and out of enclosed areas such as}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+
+\par{\noindent estuaries and other inlets.~\textsuperscript{[7]}~\textsuperscript{[9]} Tidal activity can dominate local sediment transport, and in turn differentiates morphological, geological, and ecological features in some sections of coast, distinguishing them from those with sediment transport dominated by wave action.~\textsuperscript{[11]}}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{images/eustatic-sea-level-change.png}
+    \caption{Placeholder for self generated version of this graph from Chappell and Shackelton 1986.~\textsuperscript{[18]}}
+    \label{figure4}
+\end{figure}
+
+\par{The most infrequent hydrodynamic processes which effect coastal waters is eustatic sea level change, or cumulative changes in the volume of the ocean from factors which occur over periods of 10\textsuperscript{5} years or longer, such as addition of water through glacial melting and volcanic out-gassing, thermal expansion of water, and changes in the shape of the seafloor through sediment deposit and tectonic spreading.~\textsuperscript{[4]}~\textsuperscript{[6]}~\textsuperscript{[17]} Local isostatic changes of land level with respect to sea height is caused by tectonic uplift from lithospheric convergence over a period of decades.~\textsuperscript{[6]}~\textsuperscript{[17]} These processes have the most significant influence on shoreline change over longer timescales.~\textsuperscript{[4]} Sea levels have been continuously rising for the past \textasciitilde20,000 years since the Last Glacial Maximum (LGM), primarily caused by the melting of ice sheets from the Last Pleistocene, which has formed today's coastal and inland hydrological features through continental}
+
+\newpage
+
+\par{\noindent inundation of valleys to form river systems and estuaries and the exposure of fjords previously filled with ice.~\textsuperscript{[6]}~\textsuperscript{[8]}~\textsuperscript{[17]}~\textsuperscript{[18]}~\textsuperscript{[19]}}
+
+\par{Fluvial systems also work to influence coastal processes, in areas where significant amounts of water flows from inland into river deltas and estuaries.~\textsuperscript{[9]}~\textsuperscript{[20]}~\textsuperscript{[21]}~\textsuperscript{[22]} A turbulent jetstream formed by river discharge flowing into a basin from a river dominates the hydrodynamic profile of a river mouth. The flow structure and velocity of the jetstream are dictated by the geometry of estuarine structure and are highly subject to episodic phenomenon such as storm surges or flooding events.~\textsuperscript{[20]}~\textsuperscript{[21]}~\textsuperscript{[22]} Where present, fluvial processes combine with tidal and wave action to form the overall hydrological and sedimentary profile of that coastal locale, and may serve as the prevailing factor in some coastal areas which are well-sheltered from highly energetic marine processes.~\textsuperscript{[9]}~\textsuperscript{[20]}~\textsuperscript{[21]}~\textsuperscript{[22]}}
+
+\subsection{Morphology}
+
+\par{\hspace{.5cm}More nebulous than defining the coastal zone's extents are defining the those of it's sub-areas, each subject to different arrays of hydrodynamic processes, which group to form the full cross-shore (a normal vector from shoreline to sea) profile of a coast. Earlier, we adopted a definition of the coast as being an area where sub-decadal oceanic processes influence local morphology through sediment transport. By that token, it's useful to divide the coastal zone into discrete areas based on the amount of sediment transport occurring locally as a result of marine processes.} 
+
+\par{As per our adopted definition, the furthest extent of a coast is the outer boundary where ocean waves break, and the offshore areas exceeding that boundary are unaffected by wave-action induced sediment transport and thus not included.~\textsuperscript{[2]}~\textsuperscript{[6]}  ~\textsuperscript{[9]}~\textsuperscript{[16]} Adjacent to that and proximal to the shoreline, is the}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/coastal-sub-zones.png}
+    \caption{Placeholder for self generated version of this infographic from Essentials of Oceanoraphy~\textsuperscript{[6]}}
+    \label{figure5}
+\end{figure}
+
+\par{\noindent littoral zone, the greater area in which sediment transport occurs both on in the water and on land.~\textsuperscript{[8]}~\textsuperscript{[16]}}
+
+\par{The littoral zone can be divided further into the nearshore, foreshore, and backshore areas~(\cref{figure5}). The seaward limit of the nearshore is the offshore boundary and extends to the shoreline: here waves shoal as depth becomes half the wavelength of incident wave, and break as they come into further contact with bottom morphologies in the surf zone. The foreshore encompasses the area within reach of daily wave and tidal activity, landward from the shoreline and extending to the high-high-water (HHW) mark.~\textsuperscript{[16]} Continuing landward, the backshore area begins at the HHW to the extent of where sediment transport regularly occurs, subject mostly to daily aeolian transport and episodic extreme wave and surge action from storms.~\textsuperscript{[2]}~\textsuperscript{[9]}~\textsuperscript{[12]}~\textsuperscript{[16]}}
+
+\par{It's also useful to categorize coastlines according to their sedimentary}
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\linewidth]{images/so-cal-littoral-cells.png}
+    \caption{Placeholder for self generated version of this infographic from Littoral Cells in Southern California by Inman and Chamberlain ~\textsuperscript{[24]}}
+    \label{figure6}
+\end{figure}
+
+\par{\noindent characteristics. One important distinction is between areas of coast which regularly experience a net gain in sediment accumulation as opposed to those which experience a net loss, referred to as depositional and erosional respectively. Another distinction can be made based on the size of sediment grains present onshore, which ranges on a continuum from cliffs and large boulders, to rocks, to sand, to fine-grain mud.~\textsuperscript{[23]} These characteristics manifest into environments which exhibit vastly different morphological, geological, and ecological traits.}
+
+\par{Sedimentary characteristics are strongly correlated with energy from hydrodynamic processes: often coasts exposed to areas of high wave activity will be erosional, and as sediment removed from these areas and is transported by longshore currents and deposited at sheltered beaches nearby.~\textsuperscript{[9]} The geometry of the littoral area also plays a factor, as steepness and size of the foreshore, and bathymetric gradients in the nearshore, are strongly correlated with erosion and grain size. ~\textsuperscript{[8]}~\textsuperscript{[9]}~\textsuperscript{[16]}~\textsuperscript{[23]}} 
+
+\newpage
+\fancyhead[C]{COASTAL PROCESSES}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+
+{Segmenting coastlines based on sediment transport is also essential to understanding pertinent processes. A coastal or littoral cell is a contiguous sector of coastline in which erosional and accretionary processes are balanced, and spans the distance sediment is transported from an erosional source to the extent to which it is all deposited or lost offshore.~(\cref{figure6}).~\textsuperscript{[9]}~\textsuperscript{[16]}} The recognition of discrete littoral cells is essential to understanding and characterizing coastal morphological processes, and is regularly practiced as part of coastal land management and development.~\textsuperscript{[23]}
+
+
+
+\par{**Coastal morphologies: Sandbars, barrier islands, deltas, etc...**}
+
+% REFERENCE
+\newpage
+\fancyhead[C]{REFERENCE}
+\fancyfoot[C]{\thepage} 
+\thispagestyle{fancy}
+\section{Reference}
+
+\begin{enumerate}
+
+    \item {“NOAA’s National Weather Service - Glossary.” Accessed: May 01, 2025. [Online]. \href{https://forecast.weather.gov/glossary.php?word=coastal%20waters}{Available}}
+    
+    \item {“Definition of the coast,” Geosciences LibreTexts. Accessed: May 01, 2025. [Online]. \href{https://geo.libretexts.org/Bookshelves/Oceanography/Coastal_Dynamics_(Bosboom_and_Stive)/01%3A_Overview/1.05%3A_Coastal_(morpho)_dynamics/1.5.01%3A_Definition_of_the_coast}{Available}}
+    
+    \item {“Comparative analysis II: Land demarcation and property rights,” in ResearchGate. Accessed: May 04, 2025. [Online]. \href{https://www.researchgate.net/publication/362949604_Comparative_analysis_II_Land_demarcation_and_property_rights}{Available}}
+    
+    \item {E. Hunt, M. Davidson, E. C. C. Steele, J. D. Amies, T. Scott, and P. Russell, “Shoreline modelling on timescales of days to decades,” Cambridge Prisms: Coastal Futures, vol. 1, p. e16, Jan. 2023, doi: 10.1017/cft.2023.5.}
+
+    \item {M. A. Davidson, K. D. Splinter, and I. L. Turner, “A simple equilibrium model for predicting shoreline change,” Coastal Engineering, vol. 73, pp. 191–202, Mar. 2013, doi: 10.1016/j.coastaleng.2012.11.002.}
+
+    \item {T. Garrison, Essentials of oceanography, 6th ed. Belmont, CA: Brooks/Cole, Cengage Learning, 2012.}
+
+    \item {R. Holman and M. C. Haller, “Remote Sensing of the Nearshore,” Annu. Rev. Mar. Sci., vol. 5, no. 1, pp. 95–113, Jan. 2013, doi: 10.1146/annurev-marine-121211-172408.}
+
+    \item {M. J. Kaiser and P. J. leB Williams, Eds., Marine ecology: processes, systems, and impacts, 2nd ed. Oxford; New York: Oxford University Press, 2011.}
+
+    \item {“Coastal Processes and Beaches | Learn Science at Scitable.” Accessed: May 05, 2025. [Online]. \href{https://www.nature.com/scitable/knowledge/library/coastal-processes-and-beaches-26276621/}{Available}}
+
+    \item {N. US Department of Commerce, “Marine Definitions.” Accessed: May 06, 2025. [Online]. \href{https://www.weather.gov/gum/MarineDefinitions}{Available}}
+
+    \item {G. Masselink, Introduction to coastal processes and geomorphology, Second edition. Oxon [England]: Routledge, 2014. doi: 10.4324/9780203785461.}
+
+    \item {E. B. Thornton and C. S. Kim, “Longshore current and wave height modulation at tidal frequency inside the surf zone,” Journal of Geophysical Research: Oceans, vol. 98, no. C9, pp. 16509–16519, 1993, doi: 10.1029/93JC01440.}
+
+    \item {T. C. Lippmann, A. H. Brookins, and E. B. Thornton, “Wave energy transformation on natural profiles,” Coastal Engineering, vol. 27, no. 1, pp. 1–20, May 1996, doi: 10.1016/0378-3839(95)00036-4.}
+
+    \item {B. Kinsman, Wind Waves: Their Generation and Propagation on the Ocean Surface. New York: Dover Publications, 1984.}
+
+    \item {W. J. Pierson Jr. and L. Moskowitz, “A proposed spectral form for fully developed wind seas based on the similarity theory of S. A. Kitaigorodskii,” Journal of Geophysical Research (1896-1977), vol. 69, no. 24, pp. 5181–5190, 1964, doi: 10.1029/JZ069i024p05181.}
+
+    \item {R. Davidson-Arnott, “An Introduction to Coastal Processes and Geomorphology”.}
+
+    \item {K. Fleming, P. Johnston, D. Zwartz, Y. Yokoyama, K. Lambeck, and J. Chappell, “Refining the eustatic sea-level curve since the Last Glacial Maximum using far- and intermediate-field sites,” Earth and Planetary Science Letters, vol. 163, no. 1, pp. 327–342, Nov. 1998, doi: 10.1016/S0012-821X(98)00198-8.}
+
+    \item {“Coastal prehistory in the southern Red Sea Basin, underwater archaeology, and the Farasan Islands,” ResearchGate. Accessed: May 08, 2025. [Online]. \href{https://www.researchgate.net/publication/277182725_Coastal_prehistory_in_the_southern_Red_Sea_Basin_underwater_archaeology_and_the_Farasan_Islands}{Available}}
+
+    \item {"N. J. Shackleton, “Oxygen isotopes, ice volume and sea level,” Quaternary Science Reviews, vol. 6, no. 3–4, pp. 183–190, Jan. 1987, doi: 10.1016/0277-3791(87)90003-5."}
+
+    \item {"H. Ji, S. Pan, and S. Chen, “Impact of river discharge on hydrodynamics and sedimentary processes at Yellow River Delta,” Marine Geology, vol. 425, p. 106210, Jul. 2020, doi: 10.1016/j.margeo.2020.106210."}
+
+    \item{"C. M. Broaddus et al., “First‐Order River Delta Morphology Is Explained by the Sediment Flux Balance From Rivers, Waves, and Tides,” Geophysical Research Letters, vol. 49, no. 22, p. e2022GL100355, Nov. 2022, doi: 10.1029/2022GL100355."}
+
+    \item{A. Ruiz-Reina, A. López-Ruiz, and M. Ortega-Sánchez, “River Mouth Hydrodynamics: The Role of the Outlet Geometry and Transient Tidal and River Discharge Conditions on the Jet Structure,” Journal of Geophysical Research: Oceans, vol. 130, no. 1, p. e2024JC021500, 2025, doi: 10.1029/2024JC021500.}
+
+    \item{K. Patsch and G. Griggs, “DEVELOPMENT OF SAND BUDGETS FOR CALIFORNIA S MAJOR LITTORAL CELLS”.}
+
+    \item{Littoral cells in Southern California. (Inman and Chamberlain, 1960) Accessed: May 11, 2025. [Online] \href{https://www.researchgate.net/figure/Littoral-cells-in-Southern-California-Inman-and-Chamberlain-1960-Thurman-and_fig4_240635473}{Available}}
+
+\end{enumerate}
+
+% END DOCUMENT
+\end{document}
