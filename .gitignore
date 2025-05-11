@@ -8,7 +8,6 @@
 *.fls
 *.bbl
 *.blg
-*.pdf
 
 # Ignore PDFs in references folder (your use case)
 **/references/*.pdf
