@@ -9,5 +9,5 @@
 *.bbl
 *.blg
 
-# Ignore PDFs in references folder (your use case)
+# Ignore PDFs in references folder
 **/references/*.pdf
