@@ -15,13 +15,13 @@ source ~/.zprofile
 
 ### 2. Compile main.pdf
 
-with latexmk
+directly
 
 ```bash
 ./build.sh
 ```
 
-or directly
+or with latexmk
 
 ```bash
 latexmk -pdf main.tex
