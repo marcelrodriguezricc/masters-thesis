@@ -1,6 +1,6 @@
 # Master's Thesis LaTeX
 
-This repository contains the LaTeX code for generating my master's thesis project, titled: **Developing low-cost remote sensing systems for survey and monitoring of coastal environments**, submitted in partial satisfaction of the requirements for the degree Master of Science in Media Arts and Technology at University of California, Santa Barbara.
+This repository contains the LaTeX code for generating my master's thesis project, titled: **Remote sensing of coastal environments**, submitted in partial satisfaction of the requirements for the degree Master of Science in Media Arts and Technology at University of California, Santa Barbara.
 
 ## 🏗️ How to Build
 
