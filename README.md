@@ -54,4 +54,4 @@ This project is released under the MIT License. You are free to reuse, modify, a
 
 ## 📬 Contact
 
-For questions or collaboration, feel free to open an issue or reach out via GitHub.
+For questions or collaboration, feel free to reach out via GitHub.
