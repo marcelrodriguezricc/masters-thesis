@@ -383,7 +383,7 @@
 
 % Tradeoffs between platforms
 
-\par{Remote sensors can be deployed from a variety of platforms, they may be: mounted at fixed locations, on manned or unmanned air and watercraft, or on satellites.~\textsuperscript{[7]} The most significant tradeoff between platforms is between dwell and footprint, the length at which data is gathered from one area versus the size of the total area from which data is gathered.~\textsuperscript{[7]} A certain amount of dwell or footprint may be necessary for some retrieval algorithms and not for others.~\textsuperscript{[7]} Resolution is also an important factor, for example---the National Aeronautics and Space Administration (NASA) Landsat program offers an extensive database of high-quality imagery taken by rigorously calibrated instruments mounted on satellites that is free and open, making it an ideal source of data for many scientific applications.~\textsuperscript{[45]}~\textsuperscript{[46]} However, each pixel of an image captured from a Landsat satellite represents 30 square meters of the earth's surface, and an image is captured for a given area every 16 days, so Landsat imagery does not meet the spatial or temporal requirements needed to characterize some of the processes of interest to coastal science detailed earlier.~\textsuperscript{[45]}~\textsuperscript{[46]} These tradeoffs, among others, are important to consider when deciding which datasets are suitable for a specific use-case, or applying constraints to a bespoke remote sensing system.}
+\par{Remote sensors can be deployed from a variety of platforms, they may be: mounted at fixed locations, on manned or unmanned air and watercraft, or on satellites.~\textsuperscript{[7]} The most significant tradeoff between platforms is between dwell and footprint, the length at which data is gathered from one area versus the size of the total area from which data is gathered.~\textsuperscript{[7]} A certain amount of dwell or footprint may be necessary for some retrieval algorithms and not for others.~\textsuperscript{[7]} A common platform for remote sensors, and that which perhaps carries the strongest association to remote sensing as a discipline, are spaceborne satellites, from which the vast majority of remote sensing data is captured. Resolution is an important factor to consider when using remote sensing data from satellites, for example---the National Aeronautics and Space Administration (NASA) Landsat program offers an extensive database of high-quality imagery taken by rigorously calibrated instruments mounted on satellites that is free and open, making it an ideal source of data for many scientific applications.~\textsuperscript{[45]}~\textsuperscript{[46]} However, each pixel of an image captured from a Landsat satellite represents 30 square meters of the earth's surface, and an image is captured for a given area every 16 days, so Landsat imagery does not meet the spatial or temporal requirements needed to characterize some of the processes of interest to coastal science detailed earlier.~\textsuperscript{[45]}~\textsuperscript{[46]} These tradeoffs, among others, are important to consider when deciding which datasets are suitable for a specific use-case, or applying constraints to a bespoke remote sensing system.}
 
 % ----- 2A. TECHNOLOGY -----
 
@@ -457,6 +457,8 @@
 
 \par{The first active sensor we will discuss is RADAR (Radio Detection and Ranging), a system that transmits packets in the microwave portion of the electromagnetic spectrum, receives the echo of the emitted signal off of surfaces in its surroundings, then measures the delay time to ascertain the distance of reflective surfaces from the source.~\textsuperscript{[61]}~\textsuperscript{[62]} Commonly, RADAR systems are extended to use raw sensor data in calculations that allow for the detection, location, and tracking of objects.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]} The first application of RADAR was as a aircraft detection and warning system pioneered during the Second World War, but it's role has since expanded to include a wide range of applications including, with respect to our scope---ecological, meterological, and oceanographical monitoring and survey.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]}}
 
+% Seasat visual materials
+
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{images/seasat-material.png}
@@ -464,33 +466,70 @@
     \label{figure16}
 \end{figure}
 
-% History of radar for scientific applications
+% History of radar for scientific applications --- i.e. Seasat
 
 \par{A major landmark for the implemention the RADAR for environmental remote sensing was the formation of the NASA Jet Propulsion Laberatory's Seasat program in 1973.~\textsuperscript{[48]}~\textsuperscript{[62]} Seasat is especially relevant to our scope, as the focus of the mission was to continuously gather remotely sensed data from the ocean surface for oceanographical and meterological research.~\textsuperscript{[62]} The Seasat system specifications and activities were collaboratively defined by governmental agencies, scientific bodies, and prospective users in private industry, to be able to meet use-case requirements.~\textsuperscript{[62]} Although the mission only lasted 100-days, it was able to capture more information than the past century of data gathered from ship-borne devices. For these reasons, Seasat serves as an effective basis of reference for oceanographical RADAR-based remote sensing techniques.}
 
-% Radar specifics: methods, bands, etc...
+% Seasat sensors
 
-\par{Seasat contained five instruments that used RADAR in different configurations, which continue to provide a basis for modern implementations of RADAR for environmental remote sensing---a radar altimeter for geoidial altitude measurements, a microwave scatterometer to measure wind speed at the ocean's surface, a scanning multispectral microwave radiometer to measure ocean surface and ice temperatures as well as high speed winds, a visible and IR radiometer to obtain images of cloud, land, and water features, and an experimental synthetic aperture radar for surface imagery, but with the ability to function despite weather factors and sample surface spectra, especially for the mapping of ice and open water.~\textsuperscript{[62]}}
+\par{Seasat contained five instruments that used RADAR in different configurations, which continue to provide a basis for modern implementations of RADAR for environmental remote sensing---a radar altimeter for geoidial altitude measurements, a microwave scatterometer to measure wind speed at the ocean's surface, a scanning multispectral microwave radiometer to measure ocean surface and ice temperatures as well as high speed winds, a visible and IR radiometer to obtain images of cloud, land, and water features, and an experimental synthetic aperture radar for surface imagery, but with the ability to function despite weather factors and sample surface spectra, especially for the mapping of ice and open water.~\textsuperscript{[62]} Unlike Landsat, Seasat did not operate in a sun synchronous orbit in order to capture diurnal variation, made possible by active RADAR sensors that emit radiation instead of capturing that of the sun reflected off of objects.~\textsuperscript{[62]} The ability for Seasat to operate day or night, in addition the large comparative swath range of it's synthetic aperture radar (1000km), allowed Seasat to achieve a 36-hour full coverage cycle, allowing better temporal resolution for characterizing ocean processes and applications with highly perishable data requirements.~\textsuperscript{[62]}}
+
+% Seasat sensor diagrams
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{images/seasat-sensors.png}
-    \caption{Diageams describing each sensor aboard Seasat.~\textsuperscript{[60]}}
+    \includegraphics[width=0.8\linewidth]{images/seasat-sensors.png}
+    \caption{Diagrams describing each sensor aboard Seasat.~\textsuperscript{[60]}}
     \label{figure17}
 \end{figure}
 
-% Synthetic Aperture Radar, radar imaging
+% Altimeter
 
-\par{}
+\par{An altimeter is used to measure the altitude of an object above a fixed level, and not all altimeters fall under the category of remote sensor.~\textsuperscript{[48]} Of interest here are RADAR altimeters, which measure the time taken for an emitted radio wave to reflect off of a surface and return.~\textsuperscript{[48]} Spaceborne altimeters are the method of choice for obtaining measurements for geodesy---the science of understanding the earth's geometric shape.~\textsuperscript{[48]}~\textsuperscript{[62]}}
 
 % Scatterometer
 
+\par{A RADAR scatterometer, instead of measuring the time taken for an emitted pulse to echo back to the source, measures the amount of the pulse that is reflected back to the direction from which they came.~\textsuperscript{[48]} When an electromagnetic wave is incident on a surface between two materials, the radiation is scattered in different directions, some through the medium, some in all directions away from the surface, and in the specular direction in relation to the angle of approach.~\textsuperscript{[48]} In environmental remote sensing, there are backscatter characteristics associated with certain phenomena, for example---Seasat was successful in obtaining accurate measurements of oceanic by measuring the backscatter from pulses off of capillary waves, that at certain sizes produce a high amplitude backscatter signal, as opposed to a calm ocean surface at equilibrium.~\textsuperscript{[63]} }
+
+% Visable IR / microwave radiometer
+
+\par{The scanning microwave and visable / infrared radiometers aboard Seasat are similar to Landsat's Operational Land Imager device discussed earlier, insofar as they capture images of predefined bands of the electromagnetic spectrum passively. Radiation from the microwave band (1m-1mm) of the electromagnetic spectrum can be used to derive important information about atmospheric temperature and humidity---aside from Seasat, an example of microwave radiometers being used for this purpose is Mariner 2, a NASA sponsored space probe which flew by Venus and successfully reported high surface temperatures and cool cloud coverage. Microwave scatterometers are often deployed from the ground as well, for continuous atmospheric monitoring. The addition of these sensors on Seasat, redundant with those on other satellites in simultaneous operation, was to provide a source of comparative data given the alternate orbit of Seasat to the other satellites that were sun sychronous.}
+
+% SAR example
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/sar-interferometry-okmok-volcano.jpg}
+    \caption{Surface deformation on Okmok, a volcano in the Aleutian Islands, is revealed in this interferometric SAR (InSAR) ERS-2 image. Each color cycle represents 2.8 cm of ground surface movement. Credit: NASA’s Alaska Satellite Facility Distributed Active Archive Center (ASF DAAC).}
+    \label{figure18}
+\end{figure}
+
+% SAR
+
+\par{Seasat deployed the first spaceborne synthetic aperture RADAR (SAR)---but it's development and deployment on aircraft preceeds the creation of the Seasat program by a couple of decades. The SAR is a form of active radar used to produce two-dimensional images of objects, typically mounted on a moving platform such as an aircraft of spacecraft. The aperature is synthethized through pulses being successively transmitted and received as the platforms moves, each successive pulse contributing to the overall resolution of the image, as if the radar had a physical aperature that was the size of the fully covered area. This allows for a large swath range to be accomplished from the comparatively small aperature size necessary for deployment from an air or spacecraft. The implementation of SAR on Seasat was considered experimental, but today SAR is one of the most widely used tools in environmental remote sensing, for it's ability to obtain high resolution multispectral images from a variety of platforms agnostic of signal attenuation caused by weather factors.}
+
+% RADAR bands chart
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/radar-bands.png}
+    \caption{Chart of RADAR bands and uses.~\textsuperscript{[60]}}
+    \label{figure19}
+\end{figure}
+
+% RADAR Bands
+
+\par{RADAR systems purposed for environmental remote sensing commonly use the following discrete microwave bands---the L-band (15-30cm) for biomass mapping and soil moisture measurement, S-band (8-15cm) for atmospheric percipitation measurement, C-band (4-8cm) for agricultural monitoring, wetland mapping, and detecting high frequency ocean processes, and X-band for detecting low frequency ocean processes, topographical mapping, and urban land use.}
+
+% Other platforms for RADAR
+
 % LiDAR
-% Altimeter / Sounder
-% Active & Passive Sonar (Single beam, multibeam, side scan, 3D)
+
+% Sonar --- (Single beam, multibeam, side scan, 3D)
+
+% Ground truth comparison
 
 % ----- 2B. TOPOGRAPHY -----
-
+\newpage % <----- TEMPORARY
 \subsection{Topography}
 
 % Digital elevation models
@@ -512,6 +551,7 @@
 % Waves from Camera: Lippmann et al 1996, Agaard and Holm 1989, Harbitz 1994, Stockdon and Holman 2000
 % Wave from Radar: Izquierdo and Soares 2004
 % Surface currents: Chickadel et al 2003, Puelo et al 2003, Perkovic et al 2009.
+% River discharge: Passive Microwave Radiometry at Different Frequency Bands for River Discharge Retrievals
 
 % ----- 2E. ECOLOGY -----
 
@@ -719,7 +759,8 @@
     % 62
     \item{NASA, SEASAT Global Ocean Monitoring System, NASA Technical Memorandum NASA-TM-X-74621, Jan. 1977. [Online]. \href{https://ntrs.nasa.gov/citations/19770017623}{Available}}
 
-}
+    % 63
+    \item{W. J. Plant and W. C. Keller, "Radar returns from the sea surface—Bragg scattering and breaking waves," Journal of Physical Oceanography, vol. 18, no. 8, pp. 1065–1074, Aug. 1988. [Online]. \href{https://journals.ametsoc.org/view/journals/phoc/18/8/1520-0485_1988_018_1065_rrftss_2_0_co_2.pdf}{Available}}
 
 \end{enumerate}
 
