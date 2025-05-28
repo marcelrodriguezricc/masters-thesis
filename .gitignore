@@ -11,3 +11,6 @@
 
 # Ignore PDFs in references folder
 **/references/*.pdf
+
+# Ignore venv
+venv/

@@ -49,6 +49,15 @@ If using a minimal install, install these manually with tlmgr:
 sudo tlmgr install graphicx fancyhdr titling setspace hyperref cleveref
 ```
 
+## 🐍 Python Virtual Environment
+To create a virtual environment and install required packages to enable use of Python scripts in maps folder:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## 📄 License
 This project is released under the MIT License. You are free to reuse, modify, and distribute.
 
