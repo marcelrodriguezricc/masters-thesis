@@ -42,15 +42,15 @@ zos_subset = zos_ds['zos'].sel(
 # Setup figure and axes
 fig, axs = plt.subplots(
     1, 3,
-    figsize=(18, 8),
+    figsize=(18, 9),
     subplot_kw={'projection': ccrs.PlateCarree()}
 )
 
 # Subset variables
 data_dict = {
-    "Sea Surface Temperature (°C)": (thetao_subset, cmocean.cm.thermal),
-    "Sea Surface Salinity (psu)": (salinity_subset, cmocean.cm.haline),
-    "Sea Surface Height (m)": (zos_subset, cmocean.cm.delta)
+    "TEMPERATURE (°C)": (thetao_subset, cmocean.cm.thermal),
+    "SALINITY (psu)": (salinity_subset, cmocean.cm.haline),
+    "HEIGHT (m)": (zos_subset, cmocean.cm.delta)
 }
 
 # Generate plots
@@ -79,14 +79,12 @@ for ax, (title, (data, cmap)) in zip(axs, data_dict.items()): # For each subset.
     )
 
     # Title and colorbar
-    ax.set_title(title, fontsize=14)
+    ax.set_title(title, fontname = 'Helvetica', weight='bold', pad=20, fontsize=24)
     cbar = plt.colorbar(img, ax=ax, orientation='vertical', shrink=0.7, pad=0.04)
     cbar.ax.tick_params(labelsize=8)
 
-# Plot params
-plt.rcParams['font.family'] = 'Helvetica'
-plt.tight_layout()
-
 # Save figure and show
+plt.tight_layout()
 plt.savefig("maps/cmems-thetao-so-zos.png", dpi=300, bbox_inches='tight')
+plt.savefig("maps/cmems-thetao-so-zos.svg", bbox_inches='tight', transparent=True, pad_inches=0.1)
 plt.show()
