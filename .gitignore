@@ -14,3 +14,6 @@
 
 # Ignore venv
 venv/
+
+# Ignore Copernicus Marine Credentials
+copernicus-credentials.py
