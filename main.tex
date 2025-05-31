@@ -382,6 +382,7 @@
 \par{Retrieval algorithms are needed to extract information about the state of environmental parameters from the data collected by remote sensors.~\textsuperscript{[7]} Accurate representation of geophysical phenomena requires raw image data to be subject to some transformation function consisting of a series of sub-functions, which may include---filtering, normalization, spectral analysis, or assimilation of data from one sensor with that of other types.~\textsuperscript{[7]}~\textsuperscript{[41]}~\textsuperscript{[42]}~\textsuperscript{[43]}~\textsuperscript{[44]}}
 
 % Tradeoffs between platforms
+% ***** NOTE: Rewrite the end of this paragraph about spaceborne remote sensing. *****
 
 \par{Remote sensors can be deployed from a variety of platforms, they may be: mounted at fixed locations, on manned or unmanned air and watercraft, or on satellites.~\textsuperscript{[7]} The most significant tradeoff between platforms is between dwell and footprint, the length at which data is gathered from one area versus the size of the total area from which data is gathered.~\textsuperscript{[7]} A certain amount of dwell or footprint may be necessary for some retrieval algorithms and not for others.~\textsuperscript{[7]} A common platform for remote sensors, and that which perhaps carries the strongest association to remote sensing as a discipline, are spaceborne satellites, from which the vast majority of remote sensing data is captured. Resolution is an important factor to consider when using remote sensing data from satellites, for example---the National Aeronautics and Space Administration (NASA) Landsat program offers an extensive database of high-quality imagery taken by rigorously calibrated instruments mounted on satellites that is free and open, making it an ideal source of data for many scientific applications.~\textsuperscript{[45]}~\textsuperscript{[46]} However, each pixel of an image captured from a Landsat satellite represents 30 square meters of the earth's surface, and an image is captured for a given area every 16 days, so Landsat imagery does not meet the spatial or temporal requirements needed to characterize some of the processes of interest to coastal science detailed earlier.~\textsuperscript{[45]}~\textsuperscript{[46]} These tradeoffs, among others, are important to consider when deciding which datasets are suitable for a specific use-case, or applying constraints to a bespoke remote sensing system.}
 
@@ -489,11 +490,12 @@
 
 % Scatterometer
 
-\par{A RADAR scatterometer, instead of measuring the time taken for an emitted pulse to echo back to the source, measures the amount of the pulse that is reflected back to the direction from which they came.~\textsuperscript{[48]} When an electromagnetic wave is incident on a surface between two materials, the radiation is scattered in different directions, some through the medium, some in all directions away from the surface, and in the specular direction in relation to the angle of approach.~\textsuperscript{[48]} In environmental remote sensing, there are backscatter characteristics associated with certain phenomena, for example---Seasat was successful in obtaining accurate measurements of oceanic by measuring the backscatter from pulses off of capillary waves, that at certain sizes produce a high amplitude backscatter signal, as opposed to a calm ocean surface at equilibrium.~\textsuperscript{[63]} }
+\par{A RADAR scatterometer measures backscatter expressed decibels (dB), which represents the amount of a pulse that is reflected back toward the source.~\textsuperscript{[48]}  When an electromagnetic wave is incident on a surface between two materials, the radiation is scattered in different directions, some through the medium, some in all directions away from the surface, and some in the specular direction in relation to the angle of approach.~\textsuperscript{[48]} In environmental remote sensing, there are backscatter characteristics associated with certain phenomena, for example---Seasat was successful in obtaining accurate measurements of oceanic by measuring the backscatter from pulses off of capillary waves, that at certain sizes produce a high amplitude backscatter signal, as opposed to a calm ocean surface at equilibrium.~\textsuperscript{[62]}~\textsuperscript{[63]} Other radar systems }
 
 % Visable IR / microwave radiometer
+% ***** NOTE: Go into more detail about current applications *****
 
-\par{The scanning microwave and visable / infrared radiometers aboard Seasat are similar to Landsat's Operational Land Imager device discussed earlier, insofar as they capture images of predefined bands of the electromagnetic spectrum passively. Radiation from the microwave band (1m-1mm) of the electromagnetic spectrum can be used to derive important information about atmospheric temperature and humidity---aside from Seasat, an example of microwave radiometers being used for this purpose is Mariner 2, a NASA sponsored space probe which flew by Venus and successfully reported high surface temperatures and cool cloud coverage. Microwave scatterometers are often deployed from the ground as well, for continuous atmospheric monitoring. The addition of these sensors on Seasat, redundant with those on other satellites in simultaneous operation, was to provide a source of comparative data given the alternate orbit of Seasat to the other satellites that were sun sychronous.}
+\par{The scanning microwave and visable / infrared radiometers aboard Seasat are similar to Landsat's Operational Land Imager device discussed earlier, insofar as they capture images of predefined bands of the electromagnetic spectrum passively.~\textsuperscript{[62]} Radiation from the microwave band (1m-1mm) of the electromagnetic spectrum can be used to derive important information about atmospheric temperature and humidity---aside from Seasat, an example of microwave radiometers being used for this purpose is Mariner 2, a NASA sponsored space probe which flew by Venus and successfully reported high surface temperatures and cool cloud coverage.~\textsuperscript{[64]} Microwave scatterometers are often deployed from the ground as well for continuous atmospheric monitoring.~\textsuperscript{[65]}~\textsuperscript{[66]} The addition of these sensors on Seasat, redundant with those on other satellites in simultaneous operation, was to provide a source of comparative data given the alternate orbit of Seasat to the other satellites that were sun sychronous.~\textsuperscript{[62]}}
 
 % SAR example
 \begin{figure}
@@ -505,7 +507,7 @@
 
 % SAR
 
-\par{Seasat deployed the first spaceborne synthetic aperture RADAR (SAR)---but it's development and deployment on aircraft preceeds the creation of the Seasat program by a couple of decades. The SAR is a form of active radar used to produce two-dimensional images of objects, typically mounted on a moving platform such as an aircraft of spacecraft. The aperature is synthethized through pulses being successively transmitted and received as the platforms moves, each successive pulse contributing to the overall resolution of the image, as if the radar had a physical aperature that was the size of the fully covered area. This allows for a large swath range to be accomplished from the comparatively small aperature size necessary for deployment from an air or spacecraft. The implementation of SAR on Seasat was considered experimental, but today SAR is one of the most widely used tools in environmental remote sensing, for it's ability to obtain high resolution multispectral images from a variety of platforms agnostic of signal attenuation caused by weather factors.}
+\par{Seasat deployed the first spaceborne synthetic aperture RADAR (SAR)---but it's development and deployment on aircraft preceeds the creation of the Seasat program by a couple of decades.~\textsuperscript{[62]} SAR is a form of active radar that transmits packets and receives backscatter, measuring raw amplitude and phase data of returned radiation from a moving platform such as an aircraft of spacecraft.~\textsuperscript{[48]}~\textsuperscript{[62]}~\textsuperscript{[67]} The aperture is synthesized as the platform surveys the area of interest, each successive radar cycle contributing to the overall resolution of the image.~\textsuperscript{[48]}~\textsuperscript{[67]} This allows for a large swath range to be accomplished from the comparatively small aperature size required for deployment from an air or spacecraft.~\textsuperscript{[48]}~\textsuperscript{[67]} After calibration, each pixel in the resulting image corresponds to the backscatter coefficient of that point expressed in decibels (dB), which corresponds to the normalized reflectiveness per unit area.\textsuperscript{[69]} From the backscatter coefficient measurement, material and geometric properties can be derived for several discrete points across a targeted region.\textsuperscript{[69]} The implementation of SAR on Seasat was considered experimental, but today SAR is one of the most widely used tools in environmental remote sensing, for it's ability to obtain high resolution images from a variety of platforms, and because it is agnostic of signal attenuation caused by weather factors.~\textsuperscript{[48]}~\textsuperscript{[62]}}
 
 % RADAR bands chart
 
@@ -518,9 +520,25 @@
 
 % RADAR Bands
 
-\par{RADAR systems purposed for environmental remote sensing commonly use the following discrete microwave bands---the L-band (15-30cm) for biomass mapping and soil moisture measurement, S-band (8-15cm) for atmospheric percipitation measurement, C-band (4-8cm) for agricultural monitoring, wetland mapping, and detecting high frequency ocean processes, and X-band for detecting low frequency ocean processes, topographical mapping, and urban land use.}
+\par{RADAR systems purposed for environmental remote sensing commonly use the following microwave bands for specific use-cases---the L-band (15-30cm) for biomass mapping and soil moisture measurement, S-band (8-15cm) for atmospheric percipitation measurement, C-band (4-8cm) for agricultural monitoring, wetland mapping, and detecting high frequency ocean processes, and X-band (4-2cm) for detecting medium-to-low frequency ocean processes, as well as topographical and urban mapping.~\textsuperscript{[67]} These band designators are a product of RADAR's early legacy as military technology as they were created for operational secrecy, but have since been adopted universally.~\textsuperscript{[70]} Higher frequency bands offer higher spatial resolution at the cost of higher atmospheric attenuation and less penetration.~\textsuperscript{[70]}}
+
+% Furuno X-Band Radar at COPR
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/furuno-x-band-radar.JPG}
+    \caption{A Furuno X-Band Marine RADAR and FLIR multispectral camera system operated by NOAA at Coal Oil Point Reserve in Goleta, CA.}
+    \label{figure19}
+\end{figure}
+
+% RADAR bands continued, single-band vs multiband
+
+\par{Most RADAR systems are constrained to a single band to reduce complexity and bulk---the propagation characteristics of radiation from different bands demand different hardware specifications and signal processing algorithms. The current compliment of earth monitoring satellites deploy a variety single-band sensors---while Sentinel 1A and B deploy C-band SAR for land and ocean monitoring, ALOS 2 uses the L-band for forest and disaster monitoring.~\textsuperscript{[72]}~\textsuperscript{[73]} However, an upcoming project by NASA and the Indian Space Research Organization (ISRO) will deploy the first dual-band (L and S) SAR for unprecendentedly high-resolution (5-10m) observation of various earth processes.~\textsuperscript{[74]}
 
 % Other platforms for RADAR
+% ***** NOTE: Examples of UAVs, airborne, marine, ground *****
+
+\par{RADAR is also deployed from a variety of airborne, shipborne, and land-based platforms. These platforms offer higher resolution and dwell, at the cost of swath range. The compactness, low-cost, and resolution of X-band RADAR makes it a popular choice for these non-spaceborne platforms.~\textsuperscript{[71]}}
 
 
 % LiDAR
@@ -572,6 +590,7 @@
 % Biomass estimation
 % Dynamic monitoring
 
+% ----- 3. CONCLUSION -----
 
 % ----- REFERENCE -----
 
@@ -771,6 +790,39 @@
 
     % 63
     \item{W. J. Plant and W. C. Keller, "Radar returns from the sea surface—Bragg scattering and breaking waves," Journal of Physical Oceanography, vol. 18, no. 8, pp. 1065–1074, Aug. 1988. [Online]. \href{https://journals.ametsoc.org/view/journals/phoc/18/8/1520-0485_1988_018_1065_rrftss_2_0_co_2.pdf}{Available}}
+
+    % 64
+    \item{“Mariner 2 - NASA Science.” Accessed: May 30, 2025. [Online]. \href{https://science.nasa.gov/mission/mariner-2/}{Available}}
+
+    % 65
+    \item{F. T. Ulaby, R. K. Moore, and A. K. Fung, “Microwave remote sensing: Active and passive. Volume 1 - Microwave remote sensing fundamentals and radiometry.” Jan. 01, 1981. Accessed: May 30, 2025. [Online]. \href{https://ntrs.nasa.gov/citations/19820039342}{Available}}
+
+    % 66
+    \item{“Thermal Microwave Radiation - Applications for Remote Sensing,” ResearchGate. Accessed: May 30, 2025. [Online]. \href{https://www.researchgate.net/publication/234004285_Thermal_Microwave_Radiation_-_Applications_for_Remote_Sensing}{Available}}
+
+    % 67
+    \item{N. Earth Science Data Systems, “Synthetic Aperture Radar (SAR) | NASA Earthdata.” Accessed: May 26, 2025. [Online]. \href{https://www.earthdata.nasa.gov/learn/earth-observation-data-basics/sar}{Available}}
+
+    % 68
+    \item{D. Duan, Y. Wang, and Y. Zhang, “The critical role of cross-polarized backscatter in understanding L-band PolSAR data in forested and urban environments,” Remote Sensing of Environment, vol. 311, p. 114265, Sep. 2024, doi: 10.1016/j.rse.2024.114265.}
+
+    % 69
+    \item{E. Colin, “What are the physical quantities in a SAR image?,” Medium. Accessed: May 30, 2025. [Online]. \href{https://elisecolin.medium.com/what-are-the-physical-quantities-in-a-sar-image-c788a8265abd}{Available}}
+
+    % 70
+    \item{M. I. Skolnik, Introduction to radar systems, 2d ed. New York: McGraw-Hill, 1980.}
+
+    % 71
+    \item{S. Y. Matrosov, P. C. Kennedy, and R. Cifelli, “Experimentally Based Estimates of Relations between X-Band Radar Signal Attenuation Characteristics and Differential Phase in Rain,” Nov. 2014, doi: 10.1175/JTECH-D-13-00231.1.}
+
+    % 72
+    \item{“ALOS-2 / PALSAR-2.” Accessed: May 30, 2025. [Online]. \href{https://www.eorc.jaxa.jp/ALOS-2/en/about/palsar2.htm}{Available}}
+
+    % 73
+    \item{“Sentinel-1 – Documentation.” Accessed: May 30, 2025. [Online]. \href{https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel1.html}{Available}}
+
+    % 74
+    \item{“Quick Facts | Mission,” NASA-ISRO SAR Mission (NISAR). Accessed: May 30, 2025. [Online]. \href{https://nisar.jpl.nasa.gov/mission/quick-facts}{Available}}
 
 \end{enumerate}
 
