@@ -497,7 +497,7 @@
 
 % RADAR
 
-\par{The most ubiquitous active sensors operate off of the basis of RADAR (Radio Detection and Ranging). RADAR systems transmit radiation packets in the microwave portion of the electromagnetic spectrum, receive the echo of the emitted signal off of surfaces in its surroundings, then measure the delay time to ascertain the distance of surfaces relative to the source.~\textsuperscript{[61]}~\textsuperscript{[62]} Commonly, RADAR systems are extended to use raw sensor data in calculations that allow for the detection, location, and tracking of objects.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]} The first application of RADAR was as a aircraft detection and warning system pioneered during the Second World War, but it's role has since expanded to include a wide range of applications including, with respect to our scope---ecological, meterological, and oceanographical monitoring and survey.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]}}
+\par{The most ubiquitous active sensors operate off of the basis of RADAR (Radio Detection and Ranging). RADAR systems transmit radiation packets in the microwave portion of the electromagnetic spectrum, receive the echo of the emitted signal off of targeted surfaces, and measure the time elapsed between transmission and reception (time-of-flight) to ascertain the distance of the target relative to the source.~\textsuperscript{[61]}~\textsuperscript{[62]} Commonly, RADAR systems are extended to use raw sensor data in calculations that allow for the detection, location, and tracking of objects.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]} The first application of RADAR was as a aircraft detection and warning system pioneered during the Second World War, but it's role has since expanded to include a wide range of applications---including ecological, meterological, and oceanographical monitoring and survey.~\textsuperscript{[48]}~\textsuperscript{[61]}~\textsuperscript{[62]}}
 
 % Seasat visual materials
 
@@ -529,14 +529,14 @@
 
 % Altimeter
 
-\par{An altimeter is used to measure the altitude of an object above a fixed level, and not all altimeters fall under the category of remote sensor.~\textsuperscript{[48]} Of interest here are RADAR altimeters, which measure the time taken for an emitted radio wave to reflect off of a surface and return.~\textsuperscript{[48]} Spaceborne altimeters are the method of choice for obtaining measurements for geodesy---the science of understanding the earth's geometric shape.~\textsuperscript{[48]}~\textsuperscript{[62]}}
+\par{An altimeter is used to measure the altitude of an object above a fixed level, and not all altimeters fall under the category of remote sensor.~\textsuperscript{[48]} Of interest here are RADAR altimeters that measure the time of flight of an actively emitted radio wave to ascertain the altitude of a surface with respect to the platform, or vice versa.~\textsuperscript{[48]} Spaceborne altimeters are the method of choice for obtaining measurements for geodesy---the science of understanding the earth's geometric shape.~\textsuperscript{[48]}~\textsuperscript{[62]}}
 
 \subsubsection{Scatterometer}
 
 % Scatterometer
-% ***** NOTE: EXPAND UPON LAST SENTENCE ***** 
+% ***** NOTE: VERIFY SECOND TO LAST SENTENCE. EXPAND UPON LAST SENTENCE. ***** 
 
-\par{A RADAR scatterometer measures backscatter expressed decibels (dB), which represents the amount of a pulse that is reflected back toward the source.~\textsuperscript{[48]}  When an electromagnetic wave is incident on a surface between two materials, the radiation is scattered in different directions, some through the medium, some in all directions away from the surface, and some in the specular direction in relation to the angle of approach.~\textsuperscript{[48]} In environmental remote sensing, there are backscatter characteristics associated with certain phenomena, for example---Seasat was successful in obtaining accurate measurements of oceanic by measuring the backscatter from pulses off of capillary waves, that at certain sizes produce a high amplitude backscatter signal, as opposed to a calm ocean surface at equilibrium.~\textsuperscript{[62]}~\textsuperscript{[63]} Other radar configuration also measure backscatter.}
+\par{A RADAR scatterometer measures backscatter expressed decibels (dB), which represents the amount of a pulse that is reflected back toward the source.~\textsuperscript{[48]}  When an electromagnetic wave is incident on a surface between two materials, the radiation is scattered in different directions---some through the medium, some in all directions away from the surface, and some in the specular direction in relation to the angle of approach.~\textsuperscript{[48]} In environmental remote sensing, there are backscatter characteristics associated with certain phenomena; Seasat was successful in obtaining accurate measurements of wind speed by measuring the backscatter from active electromagnetic emissions off of wind-generated capillary waves. At certain sizes, capillary waves produce a clear high amplitude backscatter signal, and the spectra of return signal is used to derive wind speed using Bragg's Law.~\textsuperscript{[62]}~\textsuperscript{[63]} Other radar configurations also measure backscatter as a component of their product.}
 
 \subsubsection{Radiometer}
 
@@ -592,13 +592,28 @@
 
 % LiDAR
 
-\par{Similarly to RADAR, Light Detection and Ranging (LiDAR) systems actively emit electromagnetic radiation and measure the time the emissions take to reflect off of a surface and return to the derive the range of that surface relative to the source.~\textsuperscript{[48]}~\textsuperscript{[75]} Differently from RADAR, LiDAR systems emit lasers as an alternative to radio waves as a source of illumination, and operate in the near-infrared region of the electromagnetic spectrum.~\textsuperscript{[48]}~\textsuperscript{[75]} A laser beam is a narrow column of light---coherent monochromatic waves of identical length, phase, amplitude, and direction---induced by the process of stimulated emission.~\textsuperscript{[76]} Active illumination by laser offers several advantages: emission rates exceed traditional RADAR , allowing for higher spatial resolution (near-centimeter as opposed to meter). Many LiDAR systems feature multiple returns, which can gather information about the three-dimensional structure of features above the surface.~\textsuperscript{[76]} The uniformity of emitted radiation allows for highly accurate range measurement, but disallows the spectral analysis of surface materials achievable with RADAR.~\textsuperscript{[76]} The product of LiDAR is a dense point cloud, a three-dimensional representation of the position of sampled points to one another based on their relative distance from the source.~\textsuperscript{[76]} Specifically pertainent to our use case, LiDAR devices may operate on the green band to penetrate through shallow water and generate point clouds from sub-aqueous surfaces.~\textsuperscript{[76]} LiDAR point clouds are used to derive models of phenomena to which spatial relationships are fundamental, which we will discuss in more detail in a later section.}
+\par{Similarly to RADAR, Light Detection and Ranging (LiDAR) systems actively emit electromagnetic radiation and measure the time-of-flight of the emission to derive the distance of a targeted surface relative to the source.~\textsuperscript{[48]}~\textsuperscript{[75]} Differently from RADAR, LiDAR systems emit lasers as an alternative to radio waves as a source of illumination, and operate in the near-infrared region of the electromagnetic spectrum as opposed to the microwave region.~\textsuperscript{[48]}~\textsuperscript{[75]} A laser beam is a narrow column of light---coherent monochromatic waves of identical length, phase, amplitude, and direction---induced by the process of stimulated emission.~\textsuperscript{[76]} Active illumination by laser offers several advantages: sampling rates far exceed that of traditional RADAR, allowing for higher spatial resolution (near-centimeter as opposed to meter). Many LiDAR systems feature multiple returns, which can gather information about the three-dimensional structure of features above the surface.~\textsuperscript{[76]} The uniformity of emitted radiation allows for highly accurate range measurement, but disallows the spectral analysis of surface materials achievable with RADAR.~\textsuperscript{[76]} The product of LiDAR is a dense point cloud, a three-dimensional representation of the position of sampled points to one another based on their relative distance from the source.~\textsuperscript{[76]} Specifically pertainent to our use case, LiDAR devices may operate on the green band to penetrate through shallow water and generate point clouds from sub-aqueous surfaces.~\textsuperscript{[76]} LiDAR point clouds are used to derive models of phenomena to which spatial properties are fundamental, which we will discuss in more detail in a later section.}
 
 \subsubsection{Sonar}
 
 % Sonar --- (Single beam, multibeam, side scan, 3D)
 
-\par{Another ranging technique that predates the use electromagnetic radiation is Sound Navigation and Ranging (SONAR), used to actively or passively locate objects acoustically by the propagation of sound waves through a medium (usually water).}
+\par{Another ranging technique that predates the use electromagnetic radiation is Sound Navigation and Ranging (SONAR), used to measure the distance of objects relative to the source acoustically by the propagation of sound waves through a medium (usually water). Acoustic sensing techniques are particularly effective for underwater applications such as seafloor mapping because sound waves experience less attenuation in water compared to electromagnetic radiation, allowing for more accurate detection over longer distances.~\textsuperscript{[77]} Sonar technologies may either actively emit sound waves to reflect off of surrounding surfaces and measure the time-of-flight to ascertain distance, or passively detect sounds emitted by other sources.~\textsuperscript{[77]} Sound waves are converted into electrical signals through transducers, that are then subjected to processing techniques to derive further information, including the distance and trajectory of a moving object. Like RADAR, with active Sonar, information on the material properties of surfaces is available through spectral analysis backscatter measurement.~\textsuperscript{[78]}}
+
+% Diagram of MBES functionality
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/mbes-diag.png}
+    \caption{A diagram describing the functionality of mutlbeam echosounders.~\textsuperscript{[79]}}
+    \label{figure19}
+\end{figure}
+
+
+% Sonar systems exist in various configurations based on use-case, }
+% For accurate observation of the seafloor, physical properties of the ocean must be considered.
+% Often, Sonar is deployed from a surface vessel or a submerisble. Tradeoffs between distances from seafloor resolution vs footprint. AUVS are also used. Acoustic navigation. Ultrashort baseline.
+
 
 % Infometric SAS
 
@@ -620,6 +635,9 @@
 \subsection{Topography}
 
 % Digital elevation models
+% Digital terrain models
+% Digital surface models
+% Photogrammetry
 % Orthographic mapping
 % Dune mapping / aeolian transport
 % Sentinel 1 & 2 Satellites
@@ -632,8 +650,9 @@
 % Video imagery bathymetry estimation: Stockdon and Holman 2000, Bell 1999, Aarninkhof 2003, Flampouris 2008.
 % Multibeam sonar based bathymetric scanning
 % Sonar Bathymetry Projects - NOAA NCEI MBES, EMODnet, IHO CSB, 
-% Composite Bathymetry - GEBCO, Seabed 2023, SRTM15+
-% NOAA Lidar Bathymetry
+% Composite bathymetry - GEBCO, Seabed 2023, SRTM15+
+% NOAA LiDAR bathymetry
+% Sub-aqueous photogrammetry
 
 % ----- 2D. HYDROLOGY -----
 
@@ -894,6 +913,15 @@
 
     % 76
     \item{"Stimulated Emission – an overview," ScienceDirect Topics, [Online]. \href{https://www.sciencedirect.com/topics/chemistry/stimulated-emission.}{Available}}
+
+    % 77
+    \item{K. Sun, W. Cui, and C. Chen, “Review of Underwater Sensing Technologies and Applications,” Sensors (Basel), vol. 21, no. 23, p. 7849, Nov. 2021, doi: 10.3390/s21237849.}
+
+    % 78
+    \item{“Multispectral multibeam echosounder backscatter data.” Accessed: Jun. 01, 2025. [Online]. \href{https://www.hydro-international.com/content/article/multispectral-multibeam-echosounder-backscatter-data?utm_source=chatgpt.com}{Available}}
+
+    % 79
+    \item{"State of the Art in Multibeam Echosounders." Available online: https://atteris.com.au/pipeline-defect-asshttps://www.hydrointernational.com/content/article/state-of-the-art-in-multibeam-echosounders/}
 
 \end{enumerate}
 
