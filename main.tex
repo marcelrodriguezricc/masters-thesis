@@ -93,7 +93,7 @@
 \end{center}
 \doublespacing
 
-\par{Most of the world’s megacities are located in the Low Elevation Coastal Zone (LECZ), which represents 2\% of the world’s total land area and 11\% of the global population. The number of people living in the LECZ has increased by 200 million from 1990 to 2015 and is projected to reach 1 billion people by 2050. These areas are especially vulnerable to the effects of coastal processes such as sea level rise, coastal erosion, and flooding, exacerbated by warming global climates. The goal of coastal sciences is to characterize these processes to inform coastal management projects and other applied use cases. Coastal environments are exceptionally dynamic---there are several marine and land processes that occur on a range of spatio-temporal scales to influence the hydro- and morphological profile to various extents across discrete coastal sections. The spatio-temporal sampling requirements for characterizing coastal processes, coupled with the volatile nature of the area, make in-situ sampling difficult and traditional remote sensing techniques ineffective. Therefore, bespoke remote sensing solutions are required.}
+\par{Most of the world’s megacities are located in the Low Elevation Coastal Zone (LECZ), which represents 2\% of the world’s total land area and 11\% of the global population. The number of people living in the LECZ has increased by 200 million from 1990 to 2015 and is projected to reach 1 billion people by 2050. These areas are especially vulnerable to the effects of coastal processes such as sea level rise, coastal erosion, and flooding, exacerbated by warming global climates. The goal of coastal science is to characterize these processes to inform coastal management projects and other applied use cases. Coastal environments are exceptionally dynamic---there are several marine and land processes that occur on a range of spatio-temporal scales to influence the hydro- and morphological profile to various extents across discrete coastal sections. The spatio-temporal sampling requirements for characterizing coastal processes, coupled with the volatile nature of the area, make in-situ sampling difficult and traditional remote sensing techniques ineffective. Therefore, bespoke remote sensing solutions are required.}
 
 \par{Our goal is to aggregate knowledge and review modern practices that pertain to remote sensing of coastal environments for oceanographic, geological, and ecological field research in order to provide a framework for developing low-cost integrated remote sensing systems for coastal survey and monitoring.}
 
@@ -545,22 +545,22 @@
 
 \par{The scanning microwave and visable / infrared radiometers aboard Seasat are similar to Landsat's Operational Land Imager device discussed earlier, insofar as they capture images of predefined bands of the electromagnetic spectrum passively.~\textsuperscript{[62]} Radiation from the microwave band (1m-1mm) of the electromagnetic spectrum can be used to derive important information about atmospheric temperature and humidity---aside from Seasat, an example of microwave radiometers being used for this purpose is Mariner 2, a NASA sponsored space probe which flew by Venus and successfully reported high surface temperatures and cool cloud coverage.~\textsuperscript{[64]} Microwave scatterometers are often deployed from the ground as well for continuous atmospheric monitoring.~\textsuperscript{[65]}~\textsuperscript{[66]} The addition of these sensors on Seasat, redundant with those on other satellites in simultaneous operation, was to provide a source of comparative data given the alternate orbit of Seasat to the other satellites that were sun sychronous.~\textsuperscript{[62]}}
 
-\subsubsection{Synthetic aperture RADAR}
-
-% SAR
-
-\par{Seasat deployed the first spaceborne synthetic aperture RADAR (SAR)---but it's development and deployment on aircraft preceeds the creation of the Seasat program by a couple of decades.~\textsuperscript{[62]} SAR is a form of active radar that transmits packets and receives backscatter, measuring raw amplitude and phase data of returned radiation from a moving platform such as an aircraft of spacecraft.~\textsuperscript{[48]}~\textsuperscript{[62]}~\textsuperscript{[67]} The aperture is synthesized as the platform surveys the area of interest, each successive radar cycle contributing to the overall resolution of the image.~\textsuperscript{[48]}~\textsuperscript{[67]} This allows for a large swath range to be accomplished from the comparatively small aperture size required for deployment from an air or spacecraft.~\textsuperscript{[48]}~\textsuperscript{[67]} After calibration, each pixel in the resulting image corresponds to the backscatter coefficient of that point expressed in decibels (dB), which corresponds to the normalized reflectiveness per unit area.\textsuperscript{[69]} From the backscatter coefficient measurement, material and geometric properties can be derived for several discrete points across a targeted region.\textsuperscript{[69]} The implementation of SAR on Seasat was considered experimental, but today SAR is one of the most widely used tools in environmental remote sensing, for it's ability to obtain high resolution images from a variety of platforms, and because it is agnostic of signal attenuation caused by weather factors.~\textsuperscript{[48]}~\textsuperscript{[62]}}
-
 % SAR example
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{images/sar-interferometry-okmok-volcano.jpg}
+    \includegraphics[width=0.5\linewidth]{images/sar-interferometry-okmok-volcano.jpg}
     \caption{Surface deformation on Okmok, a volcano in the Aleutian Islands, is revealed in this interferometric SAR (InSAR) ERS-2 image. Each color cycle represents 2.8 cm of ground surface movement. Credit: NASA’s Alaska Satellite Facility Distributed Active Archive Center (ASF DAAC).}
     \label{figure18}
 \end{figure}
 
 \subsubsection{RADAR bands}
+
+\subsubsection{Synthetic aperture RADAR}
+
+% SAR
+
+\par{Seasat deployed the first spaceborne synthetic aperture RADAR (SAR)---but it's development and deployment on aircraft preceeds the creation of the Seasat program by a couple of decades.~\textsuperscript{[62]} SAR is a form of active radar that transmits packets and receives backscatter, measuring raw amplitude and phase data of returned radiation from a moving platform such as an aircraft of spacecraft.~\textsuperscript{[48]}~\textsuperscript{[62]}~\textsuperscript{[67]} The aperture is synthesized as the platform surveys the area of interest, each successive radar cycle contributing to the overall resolution of the image.~\textsuperscript{[48]}~\textsuperscript{[67]} This allows for a large swath range to be accomplished from the comparatively small aperture size required for deployment from an air or spacecraft.~\textsuperscript{[48]}~\textsuperscript{[67]} After calibration, each pixel in the resulting image corresponds to the backscatter coefficient of that point expressed in decibels (dB), which corresponds to the normalized reflectiveness per unit area.\textsuperscript{[69]} From the backscatter coefficient measurement, material and geometric properties can be derived for several discrete points across a targeted region.\textsuperscript{[69]} The implementation of SAR on Seasat was considered experimental, but today SAR is one of the most widely used tools in environmental remote sensing, for it's ability to obtain high resolution images from a variety of platforms, and because it is agnostic of signal attenuation caused by weather factors.~\textsuperscript{[48]}~\textsuperscript{[62]}}
 
 % RADAR Bands
 
@@ -579,6 +579,11 @@
 
 \par{Most RADAR systems are constrained to a single band to reduce complexity and bulk---the propagation characteristics of radiation from different bands demand different hardware specifications and signal processing algorithms. The compactness, low-cost, and resolution of X-band RADAR makes it a popular choice for non-spaceborne platforms.~\textsuperscript{[71]} The current compliment of earth monitoring satellites deploy a variety single-band sensors---while Sentinel 1A and B deploy C-band SAR for land and ocean monitoring, ALOS 2 uses the L-band for forest and disaster monitoring.~\textsuperscript{[72]}~\textsuperscript{[73]} However, an upcoming project by NASA and the Indian Space Research Organization (ISRO) will deploy the first dual-band (L and S) SAR for unprecendentedly high-resolution (5-10m) observation of various earth processes.~\textsuperscript{[74]}}
 
+% RADAR Platforms
+% ***** NOTE: NEEDS WORK, IMUS, INS *****
+
+\par{RADAR is also deployed from a variety of airborne, shipborne, and land-based platforms. These platforms offer higher spatial resolution, dwell, and penetration, at the cost of swath range.}
+
 % Furuno X-Band Radar at COPR
 
 \begin{figure}
@@ -594,11 +599,8 @@
 
 \par{Similarly to RADAR, Light Detection and Ranging (LiDAR) systems actively emit electromagnetic radiation and measure the time-of-flight of the emission to derive the distance of a targeted surface relative to the source.~\textsuperscript{[48]}~\textsuperscript{[75]} Differently from RADAR, LiDAR systems emit lasers as an alternative to radio waves as a source of illumination, and operate in the near-infrared region of the electromagnetic spectrum as opposed to the microwave region.~\textsuperscript{[48]}~\textsuperscript{[75]} A laser beam is a narrow column of light---coherent monochromatic waves of identical length, phase, amplitude, and direction---induced by the process of stimulated emission.~\textsuperscript{[76]} Active illumination by laser offers several advantages: sampling rates far exceed that of traditional RADAR, allowing for higher spatial resolution (near-centimeter as opposed to meter). Many LiDAR systems feature multiple returns, which can gather information about the three-dimensional structure of features above the surface.~\textsuperscript{[76]} The uniformity of emitted radiation allows for highly accurate range measurement, but disallows the spectral analysis of surface materials achievable with RADAR.~\textsuperscript{[76]} The product of LiDAR is a dense point cloud, a three-dimensional representation of the position of sampled points to one another based on their relative distance from the source.~\textsuperscript{[76]} Specifically pertainent to our use case, LiDAR devices may operate on the green band to penetrate through shallow water and generate point clouds from sub-aqueous surfaces.~\textsuperscript{[76]} LiDAR point clouds are used to derive models of phenomena to which spatial properties are fundamental, which we will discuss in more detail in a later section.}
 
-\subsubsection{Sonar}
-
-% Sonar --- (Single beam, multibeam, side scan, 3D)
-
-\par{Another ranging technique that predates the use electromagnetic radiation is Sound Navigation and Ranging (SONAR), used to measure the distance of objects relative to the source acoustically by the propagation of sound waves through a medium (usually water). Acoustic sensing techniques are particularly effective for underwater applications such as seafloor mapping because sound waves experience less attenuation in water compared to electromagnetic radiation, allowing for more accurate detection over longer distances.~\textsuperscript{[77]} Sonar technologies may either actively emit sound waves to reflect off of surrounding surfaces and measure the time-of-flight to ascertain distance, or passively detect sounds emitted by other sources.~\textsuperscript{[77]} Sound waves are converted into electrical signals through transducers, that are then subjected to processing techniques to derive further information, including the distance and trajectory of a moving object. Like RADAR, with active Sonar, information on the material properties of surfaces is available through spectral analysis backscatter measurement.~\textsuperscript{[78]}}
+% LiDAR platforms
+% ***** NOTE: NEEDS WORK *****
 
 % Diagram of MBES functionality
 
@@ -606,26 +608,87 @@
     \centering
     \includegraphics[width=1\linewidth]{images/mbes-diag.png}
     \caption{A diagram describing the functionality of mutlbeam echosounders.~\textsuperscript{[79]}}
-    \label{figure19}
+    \label{figure20}
 \end{figure}
 
+\subsubsection{Sonar}
 
-% Sonar systems exist in various configurations based on use-case, }
-% For accurate observation of the seafloor, physical properties of the ocean must be considered.
-% Often, Sonar is deployed from a surface vessel or a submerisble. Tradeoffs between distances from seafloor resolution vs footprint. AUVS are also used. Acoustic navigation. Ultrashort baseline.
+% Sonar
+
+\par{Another ranging technique that predates the use electromagnetic radiation is Sound Navigation and Ranging (SONAR), used to measure the distance of objects relative to the source acoustically by the propagation of sound waves through a medium (usually water). Acoustic sensing techniques are particularly effective for underwater applications such as seafloor mapping because sound waves experience less attenuation in water compared to electromagnetic radiation, allowing for more accurate detection over longer distances.~\textsuperscript{[77]} Sonar technologies may either actively emit sound waves (pings) to reflect off of surrounding surfaces and measure the time-of-flight to ascertain distance (echosounding), or passively receive sounds emitted by other sources.~\textsuperscript{[77]} Sound waves are converted into electrical signals through transducers, that are then subjected to processing techniques to derive further information, including the distance and trajectory of a moving object. Like RADAR, with active Sonar, information on the material properties of surfaces is available through spectral analysis backscatter measurement.~\textsuperscript{[78]}}
+
+% Side scan sonar example
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/lee-sonar.jpg}
+    \caption{A side-scan sonar image of the passenger freighter Robert E. Lee, collected by the HUGIN 3000 AUV in 2001. Image courtesy of NOAA.}
+    \label{figure21}
+\end{figure}
+
+% Types of sonar
+% ***** NOTE: Confirm facts with SAS and backprojection *****
+\subsubsection{Types of sonar}
+
+\par{Sonar systems exist in various configurations based on use-case.~\textsuperscript{[77]} Passive sonar makes use of a hydrophone transudcer that converts incident sound waves travelling through the surrounding water into electrical signals, from sources that produce sound such as boats, animals, and natural processes.~\textsuperscript{[77]}~\textsuperscript{[80]} Active sonar comes in a variety of different forms based on the number and spatial coverage from pings. Ubiqitiously, they ping as the platform navigates through water to generate a map of ocean floor depths.~\textsuperscript{[77]}~\textsuperscript{[80]} The first active sonar device was the single-beam echosounder, the invention of which was out of necessity for locating the remains of the famously sunken Titanic vessel in 1912.~\textsuperscript{[77]} Single-beam echosounder technology pings a single small point to measure time-of-flight from the platform to a surface beneath.~\textsuperscript{[77]}~\textsuperscript{[80]}}
+
+\par{In the 1970s, the multibeam echosounder was developed to deploy hundreds of beams in a fan to ping a large area simultaneously for a higher resolution of points.~\textsuperscript{[77]}~\textsuperscript{[80]}  Despite this, single-beam echosounders are still used because of their relatively low-cost and size, in applications for which low resolution altidude information about the ocean floor is sufficient. Commonly multibeam echosounders operate at higher frequencies, allowing for more data points to be gathered as the platform navigates through the water. This comes at the expense of the distance each ping is able to travel, so single-beam echosounders are commonly used for deep sea survey. ~\textsuperscript{[77]}~\textsuperscript{[80]} Side-scan sonar systems emit two beams from a transducer affixed to either broadside of the platform. This allows for orthagonal scanning of the surrouding seafloor as the platform passes through the water, for imaged distance and backscatter measurements.~\textsuperscript{[77]}~\textsuperscript{[80]} Sub-bottom profilers are sonar devices that use low-frequency sound pulses to partially penetrate the initial seafloor substrate to obtain informtion on subsurface sediments.~\textsuperscript{[77]}~\textsuperscript{[81]}}
+
+% Side scan vs SAS
+% ***** NOTE: Modify caption *****
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/sidescan-vs-sas.png}
+    \caption{With side scan sonar (left), each pulse measures a distinct, separate area of the seafloor. In contrast, the pulses of synthetic aperture sonar (right) overlap with each other and measure each area more than once. This artificially lengthens the reach of the array. Image courtesy of NOAA.~\textsuperscript{[82]}}
+    \label{figure22}
+\end{figure}
+
+\par{The movement of the survey vessel deploying sonar can also be used to synthesize a large aperture and allow for a higher resolution of distance and backscatter measurements, using Synthetic aperture sonar (SAS) systems.~\textsuperscript{[82]}~\textsuperscript{[83]}~\textsuperscript{[84]}  A backprojection algorithm is used to combine phase information from different points shared in the beamwidth of subsequent pings, in order to synthethize the large aperture.~\textsuperscript{[82]}~\textsuperscript{[83]}~\textsuperscript{[84]}  The result is an image of the seafloor with resolution equivalent to a multibeam sonar sensor but with a much smaller physical array, and with a uniform resolution across the entire swath as opposed to a loss of information from the furthest reaches.~\textsuperscript{[82]}~\textsuperscript{[83]}~\textsuperscript{[84]}}
+
+% Thermocline diagram
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/thermocline.jpg}
+    \caption{The red line in this illustration shows a typical seawater temperature profile. In the thermocline, temperature decreases rapidly from the mixed upper layer of the ocean (called the epipelagic zone) to much colder deep water in the thermocline (mesopelagic zone). Below 3,300 feet to a depth of about 13,100 feet, water temperature remains constant.~\textsuperscript{[82]}}
+    \label{figure23}
+\end{figure}
+
+% Physical properties of ocean that effect echosounding
+
+\par{There are physical properties of the way sound propagates through the ocean that must be considered in order to deploy sonar effectively. Sound travels through water at differently based on factors like temperature, salinity, pressure, and turbulance.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]} When traveling across water columns that exhibit different levels of each of these properties, sound waves may bend and cause inaccurate measurements.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}  Most of the ocean can be divided into three main layers based on temperature variation from solar radiation---the mixed layer that includes the surface, where heat is linearly related to depth throughout, the thermocline where heat decreases more sharply with depth, and the deep layer unaffected by solar radiation that has a constant temperature throughout.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}~\textsuperscript{[91]}  There are tools that gather data from properties that affect the propagation of sound through water columns such as Conductivity, Temperature, and Depth (CTD) probes and Expendable Bathythermograph (XBT) probes, that can then be used to create a sound speed profile.~\textsuperscript{[88]}~\textsuperscript{[89]} The sound speed profile can be then be applied to ray tracing models to correct for bending paths in the deployment of sonar devices. As mentioned before, low-frequency sound waves are less affected by scattering and refraction, and are prefered for deep sea and long-distance sampling.~\textsuperscript{[88]}~\textsuperscript{[89]}}
+
+% Underwater optical and em
 
 
-% Infometric SAS
+\subsubsection{Sonar platforms}
 
-\subsubsection{Platforms}
+% SONAR Platforms
+% ***** NOTE: NEEDS WORK *****
 
-% Other platforms for remote sensors
-% ***** NOTE: Examples of UAVs, airborne, marine, ground, IMUS, INS*****
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/blue-rov.jpg}
+    \caption{The BlueROV2, an open source submersible autonomous underwater vehicle by Blue Robotics.}
+    \label{figure24}
+\end{figure}
 
-\par{RADAR is also deployed from a variety of airborne, shipborne, and land-based platforms. These platforms offer higher spatial resolution, dwell, and penetration, at the cost of swath range.}
+\par{Sonar transducers must be couped with the surrounding body of water, and may be deployed from the surface by vessels and buoys, or sub-aqueously by submersibles. Mobile platforms may tow sonar arrays to isolate them from the noise of propulsion systems. Submerged sonar systems may make use of the Sound Fixing and Ranging (SOFAR) channel, a naturally occuring horizontal layer of water that acts as a waveguide for sound, allowing for sound waves to become travel across entire ocean basins. Sonar transducers must be couped with the surrounding body of water, and may be deployed from the surface by vessels and buoys, or sub-aqueously by submersibles. Mobile platforms may tow sonar arrays to isolate them from the noise of propulsion systems. Submerged sonar systems may make use of the Sound Fixing and Ranging (SOFAR) channel, a naturally occuring horizontal layer of water that acts as a waveguide for sound, allowing for sound waves to become travel across entire ocean basins.~\textsuperscript{[91]} The distance from the seafloor by which a multibeam sonar system is deployed gives rise to a tradeoff between resolution and footprint. The closer to the seafloor by which a system can emit a fan of sound beams, the higher the resolution and smaller the footprint. Accuracy generally suffers at distance regardless of the sonar configuration, although as we had discussed previously there are synthtic aperture algorithms for resolving data loss at large distances by correlating phase relationships between ping iterations.}
 
+% Diagram of an ultra short baseline system
+% ***** NOTE: Generate a unique diagram
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/usbl.png}
+    \caption{Placeholder for a diagram depicting an ultra short baseline system for underwater positioning.}
+    \label{figure25}
+\end{figure}
 
+\par{The location, attitude, and heading of the sensor aperture is critical for accurate measurement and geolocation of sensed points. Intertial Navigation Systems (INS) combine a complement of sensors---including accelerometers to measure proper acceleration, gyroscopes to detect angular rotation, and magnetometers to detect changes with respect to the Earth's magnetic field---to obtain orientation and positional data. For survey-grade accuracy and to obtain secondary measurements such as heading and depth, INS measurements must be callibrated with global positioning system (GPS) data from GNSS services. GNSS systems are unable to connect with GPS devices underwater, so often a topside (sub-aerial) intermediary platform equipped with GPS maintains the relative location of the underwater platform. A common method for underwater positioning is through acoustic triangulation of a transponder mounted to the underwater platform by transducers on the surface vessel. This type of system is called either a Long, Short, or Ultrashort baseline system (LBL, SBL, USBS) based on the spacing of the transducers on the surface vessel, which is correlated with accuracy.}
+
+% Acoustic navigation. Ultrashort baseline
 
 % Ground truth comparison
 
@@ -664,6 +727,7 @@
 % River discharge: Passive Microwave Radiometry at Different Frequency Bands for River Discharge Retrievals
 % US IOOS HF Radar
 % Copernicus Marine Viewer
+% Echosounder ice monitoring
 
 % ----- 2E. ECOLOGY -----
 
@@ -918,10 +982,49 @@
     \item{K. Sun, W. Cui, and C. Chen, “Review of Underwater Sensing Technologies and Applications,” Sensors (Basel), vol. 21, no. 23, p. 7849, Nov. 2021, doi: 10.3390/s21237849.}
 
     % 78
-    \item{“Multispectral multibeam echosounder backscatter data.” Accessed: Jun. 01, 2025. [Online]. \href{https://www.hydro-international.com/content/article/multispectral-multibeam-echosounder-backscatter-data?utm_source=chatgpt.com}{Available}}
+    \item{“Multispectral multibeam echosounder backscatter data.” Accessed: Jun. 01, 2025. [Online]. \href{https://www.hydro-international.com/content/article/multispectral-multibeam-echosounder-backscatter-data}{Available}}
 
     % 79
     \item{"State of the Art in Multibeam Echosounders." Available online: https://atteris.com.au/pipeline-defect-asshttps://www.hydrointernational.com/content/article/state-of-the-art-in-multibeam-echosounders/}
+
+    % 80
+    \item{“Exploration Tools: Sonar: NOAA Office of Ocean Exploration and Research.” Accessed: Jun. 01, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/technology/sonar/sonar.html}{Available}}
+
+    % 81
+    \item{“Exploration Tools: Sub-Bottom Profiler: NOAA Office of Ocean Exploration and Research.” Accessed: Jun. 01, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/technology/sub-bottom-profiler/sub-bottom-profiler.html}{Available}}
+
+    % 82
+    \item{“Exploration Tools: Synthetic Aperture Sonar: NOAA Office of Ocean Exploration and Research.” Accessed: Jun. 01, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/technology/sonar/sas.html}{Available}}
+
+    % 83
+    \item{J. W. Jamieson, C. Gini, C. Brown, and K. Robert, “Interferometric Synthetic Aperture Sonar: A New Tool for Seafloor Characterization | Oceanography”, Accessed: May 31, 2025. [Online]. \href{https://tos.org/oceanography/article/interferometric-synthetic-aperture-sonar-a-new-tool-for-seafloor-characterization?utm_source}{Available}}
+
+    % 84
+    \item{R. E. Hansen, “Introduction to Synthetic Aperture Sonar,” in Sonar Systems, IntechOpen, 2011. doi: 10.5772/23122.}
+
+    % 85
+    \item{E. Romero, L. Tenorio-Fernandez, E. Portela, J. Montes-Aréchiga, and L. Sánchez-Velasco, “Improving the thermocline calculation over the global ocean,” Ocean Science, vol. 19, no. 3, pp. 887–901, Jun. 2023, doi: 10.5194/os-19-887-2023.}
+
+    % 86
+    \item{"Understanding Ocean Acoustics" Accessed: Jun. 02, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/explorations/sound01/background/acoustics/acoustics.html"}{Available}}
+
+
+    % 87
+    \item{K. Srinivasu et al., “Study on Acoustic Variability Affected by Upper Ocean Dynamics in South Eastern Arabian Sea,” Earth and Space Science, vol. 11, no. 11, p. e2023EA003497, 2024, doi: 10.1029/2023EA003497.}
+
+    % 88
+    \item{“What is an Expendable Bathythermograph, or ‘XBT’? : Ocean Exploration Facts: NOAA Office of Ocean Exploration and Research.” Accessed: Jun. 02, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/facts/xbt.html}{Available}}
+
+    % 89
+    \item {“What does ‘CTD’ stand for? : Ocean Exploration Facts: NOAA Office of Ocean Exploration and Research.” Accessed: Jun. 02, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/facts/ctd.html}{Available}}
+
+    % 90
+    \item{“What is a thermocline?” Accessed: Jun. 02, 2025. [Online]. \href{https://oceanservice.noaa.gov/facts/thermocline.html}{Available}}
+
+    % 91
+    \item{“NOAA Ocean Explorer: Sounds in the Sea 2001: diagram of how sound travels underwater.” Accessed: Jun. 02, 2025. [Online]. \href{https://oceanexplorer.noaa.gov/explorations/sound01/background/acoustics/media/sofar.html}{Available}}
+
+
 
 \end{enumerate}
 
