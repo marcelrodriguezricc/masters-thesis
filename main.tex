@@ -657,9 +657,7 @@
 
 % Physical properties of ocean that effect echosounding
 
-\par{There are physical properties of the way sound propagates through the ocean that must be considered in order to deploy sonar effectively. Sound travels through water at differently based on factors like temperature, salinity, pressure, and turbulance.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]} When traveling across water columns that exhibit different levels of each of these properties, sound waves may bend and cause inaccurate measurements.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}  Most of the ocean can be divided into three main layers based on temperature variation from solar radiation---the mixed layer that includes the surface, where heat is linearly related to depth throughout, the thermocline where heat decreases more sharply with depth, and the deep layer unaffected by solar radiation that has a constant temperature throughout.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}~\textsuperscript{[91]}  There are tools that gather data from properties that affect the propagation of sound through water columns such as Conductivity, Temperature, and Depth (CTD) probes and Expendable Bathythermograph (XBT) probes, that can then be used to create a sound speed profile.~\textsuperscript{[88]}~\textsuperscript{[89]} The sound speed profile can be then be applied to ray tracing models to correct for bending paths in the deployment of sonar devices. As mentioned before, low-frequency sound waves are less affected by scattering and refraction, and are prefered for deep sea and long-distance sampling.~\textsuperscript{[88]}~\textsuperscript{[89]}}
-
-% Underwater optical and em
+\par{There are physical properties of the way sound propagates through the ocean that must be considered in order to deploy sonar effectively. Sound travels through water at differently based on factors like temperature, salinity, pressure, and turbulance.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]} When traveling across water columns that exhibit different levels of each of these properties, sound waves may bend and cause inaccurate measurements.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}  Most of the ocean can be divided into three main layers based on temperature variation from solar radiation---the mixed layer that includes the surface, where heat is linearly related to depth throughout, the thermocline where heat decreases more sharply with depth, and the deep layer unaffected by solar radiation that has a constant temperature throughout.~\textsuperscript{[85]}~\textsuperscript{[86]}~\textsuperscript{[87]}~\textsuperscript{[91]}  There are tools that gather data from properties that affect the propagation of sound through water columns such as Conductivity, Temperature, and Depth (CTD) probes and Expendable Bathythermograph (XBT) probes, that can then be used to create a sound velocity profile (SVP).~\textsuperscript{[88]}~\textsuperscript{[89]} The SVP can be then be applied to ray tracing models to correct for bending paths in the deployment of sonar devices. As mentioned before, low-frequency sound waves are less affected by scattering and refraction, and are prefered for deep sea and long-distance sampling.~\textsuperscript{[88]}~\textsuperscript{[89]}}
 
 
 \subsubsection{Sonar platforms}
@@ -667,7 +665,19 @@
 % SONAR Platforms
 % ***** NOTE: NEEDS WORK *****
 
-\par{Sonar transducers must be submerged underwater to be coupled with the transmitting medium, and may be deployed from a variety of platforms including---vessels, buoys, aquatic structures, and submersibles.~\textsuperscript{[93]} Moving platforms generate acoustic noise that may interfere with sonar detection. Acoustic noise from combustion and mechanical action is radiated into the sea from a vessel through structural vibration.~\textsuperscript{[92]} Another common source of noise is cavitation; when a propeller induces a pressure differential small vapor bubbles are created, which then implode and generate shock waves that cause acoustic noise and structural damage.~\textsuperscript{[92]} Turbulance from a vessel's movement through water can also cause significant acoustic noise.~\textsuperscript{[94]} Informed hydrodynamic structural design of propellers and vessel hulls also reduce caviation and turbulance.~\textsuperscript{[94]} For these reasons, amongst others, careful consideration is necessary where the transudcers are placed in relation to sources of potential noise. A common solution for larger vessels is to tow sonar arrays by a cable several kilometers away to isolate them from noise.~\textsuperscript{[95]}}
+\par{Sonar transducers must be submerged underwater to be coupled with the transmitting medium, and may be deployed from a variety of platforms including---boats, buoys, aquatic structures, and submersibles.~\textsuperscript{[93]} Traditionally, sonar for bathymetric mapping had been deployed from large research vessels because of the payload weight requirements of professional-grade echosounding units~\textsuperscript{[99]}~\textsuperscript{[100]} Recently, echosounders have become increasingly miniaturized, enabling their deployment from small crewed and uncrewed vessels that allow for deployment in shallow water where traditional research vessels would be unable to reach.~\textsuperscript{[99]}~\textsuperscript{[100]} Uncrewed vessels are particularly of interest to coastal sensing for their ability to operate delicately and discretely in sensitive areas such as estuaries, and remove the danger associated with operating a crewed vessel in the surf zone.}
+
+\par{Moving platforms generate acoustic noise that may interfere with sonar detection. Acoustic noise from combustion and mechanical action is radiated into the sea from a vessel through structural vibration.~\textsuperscript{[92]} Another common source of noise is cavitation; when a propeller induces a pressure differential small vapor bubbles are created, which then implode and generate shock waves that cause acoustic noise and structural damage.~\textsuperscript{[92]} Turbulance from a vessel's movement through water can also cause significant acoustic noise.~\textsuperscript{[94]} Informed hydrodynamic structural design of propellers and vessel hulls also reduce caviation and turbulance.~\textsuperscript{[94]} For these reasons, amongst others, careful consideration is necessary where the transudcers are placed in relation to sources of potential noise. A common solution for larger vessels is to tow sonar arrays by a cable several kilometers away to isolate them from noise.~\textsuperscript{[95]}}
+
+% Blue ROV
+% ***** NOTE: Generate a new image here with 4 different platforms *****
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/blue-rov.jpg}
+    \caption{The BlueROV2, an open source submersible autonomous underwater vehicle by Blue Robotics.}
+    \label{figure25}
+\end{figure}
 
 % Surface platforms
 
@@ -677,25 +687,22 @@
 
 \par{The position, attitude, and heading of the sensor platform, and the relative location and orientation of the sensor on the platform, are critical data points for sonar mapping. ~\textsuperscript{[96]} The accuracy of sonar survey is intrinsically linked to the quality of these sensors.~\textsuperscript{[96]} An Intertial Navigation System (INS) incorporates a sensor subsystem called an Intertial Measurement Unit (IMU)---that includes accelerometers to measure proper acceleration, gyroscopes to detect angular velocity, and magnetometers to measure the Earth's magnetic field---to additionally calculate the velocity and heading of a vessel without the need for external reference.~\textsuperscript{[96]} For sonar deployment, this allows for positional correlation pinged surface points with respect to one another and for correction of attitude incosistencies caused by a volatile sea.~\textsuperscript{[96]} However, for survey-grade accuracy and georeferencing, INS measurements must be actively callibrated with global positioning system (GPS) data from GNSS services in real time.~\textsuperscript{[96]}}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1.0\linewidth]{images/blue-rov.jpg}
-    \caption{The BlueROV2, an open source submersible autonomous underwater vehicle by Blue Robotics.}
-    \label{figure25}
-\end{figure}
+\subsubsection{Submerged platforms}
 
-\subsubsection{Submersible platforms}
+% Submerged platforms
+% ***** NOTE: TOWED ARRAY SENTENCE NEEDS EDIT *****
 
-% Submarines and AUVs
+\par{The closer to the seafloor by which a system can emit a fan of sound beams, the higher the resolution and smaller the footprint.~\textsuperscript{[80]}~\textsuperscript{[82]} Accuracy generally suffers at distance, although as we had discussed previously there are synthtic aperture algorithms for resolving data loss at large distances by correlating phase relationships between ping iterations.~\textsuperscript{[82]}~\textsuperscript{[83]}~\textsuperscript{[84]} For high resolution deep sea mapping, large research vessels may deploy submerged sonar platforms far beneath the bottom of the hull.~\textsuperscript{[99]}~\textsuperscript{[100]} This another benefit of towing sonar and hydrophone arrays from tethers that can extend from meters to kilometers in length. Increasingly popular has become the use of autonomous underwater vehicles (AUV) and remotely operated vehicles (ROV) attached to long tether cables, allowing for independent underwater navigation with real time data transmission.\textsuperscript{[99]}~\textsuperscript{[100]}~\textsuperscript{[102]} Autonomous underwater gliders my also be deployed long range sub-aqueous sensing without the use of a teather. This is accomplished by travel according to a planned path using variable bouyancy to reduce power consuption before automatically surfacing to transmit survey and retrieval data.~\textsuperscript{[103]}}
 
 
+\subsubsection{Underwater positioning}
 
-% SOFAR
+%  Underwater GNSS
 
-\par{Submerged sonar systems may make use of the Sound Fixing and Ranging (SOFAR) channel, a naturally occuring horizontal layer of water that acts as a waveguide for sound, allowing for sound waves to become travel across entire ocean basins.~\textsuperscript{[91]} The distance from the seafloor by which a multibeam sonar system is deployed gives rise to a tradeoff between resolution and footprint. The closer to the seafloor by which a system can emit a fan of sound beams, the higher the resolution and smaller the footprint.~\textsuperscript{[80]}~\textsuperscript{[82]} Accuracy generally suffers at distance, although as we had discussed previously there are synthtic aperture algorithms for resolving data loss at large distances by correlating phase relationships between ping iterations.~\textsuperscript{[82]}~\textsuperscript{[83]}~\textsuperscript{[84]}}
+\par{When deploying sonar from a submerged platform, GNSS systems are unable to connect with GPS devices underwater, so often a topside (sub-aerial) intermediary platform equipped with GPS maintains the relative location of the underwater platform.~\textsuperscript{[97]}~\textsuperscript{[99]} A common method for underwater positioning is through acoustic triangulation of a transponder mounted to the underwater platform by transducers on the surface vessel. This type of system is called either a Long, Short, or Ultrashort baseline system (LBL, SBL, USBS) based on the spacing of the transducers, the length of which is correlated with accuracy.~\textsuperscript{[97]}~\textsuperscript{[99]} The transducer on the ship emits a ping, which the transponder on the submersible platform responds to, enabling both relative position tracking and packet transmission.~\textsuperscript{[97]}~\textsuperscript{[99]} Recent developments in filtering techniques has enabled survey-grade geolocation accuracy of pinged surfaces from shorter baseline systems, but still run the risk of innaccuracy should parameters exceed certain conditional thresholds.~\textsuperscript{[97]}~\textsuperscript{[99]}}
 
 % Diagram of an ultra short baseline system
-% ***** NOTE: Generate a unique diagram
+% ***** NOTE: Generate a unique diagram with graph of mid latitude sound speed profile and axis *****
 
 \begin{figure}
     \centering
@@ -704,18 +711,29 @@
     \label{figure26}
 \end{figure}
 
-%  Underwater GNSS
+\subsubsection{SOFAR channel}
 
-\par{When deploying sonar from a submersible platform, GNSS systems are unable to connect with GPS devices underwater, so often a topside (sub-aerial) intermediary platform equipped with GPS maintains the relative location of the underwater platform.~\textsuperscript{[97]}~\textsuperscript{[99]} A common method for underwater positioning is through acoustic triangulation of a transponder mounted to the underwater platform by transducers on the surface vessel. This type of system is called either a Long, Short, or Ultrashort baseline system (LBL, SBL, USBS) based on the spacing of the transducers, the length of which is correlated with accuracy.~\textsuperscript{[97]}~\textsuperscript{[99]} The transducer on the ship emits a ping, which the transponder on the submersible platform responds to, enabling both relative position tracking and packet transmission.~\textsuperscript{[97]}~\textsuperscript{[99]} Recent developments in filtering techniques has enabled survey-grade geolocation accuracy of pinged surfaces from shorter baseline systems, but still run the risk of innaccuracy should parameters exceed certain conditional thresholds.~\textsuperscript{[97]}~\textsuperscript{[99]}}
+% SOFAR
 
-% Ground truth comparison
+\par{Submerged sonar systems may make use of the Sound Fixing and Ranging (SOFAR) channel, a naturally occuring horizontal layer of water that acts as a waveguide for sound.~\textsuperscript{[91]} The SOFAR channel phenomena generally occurs in mid-latitude ocean waters that feature high variation in temperature and salinity with respect to depth.~\textsuperscript{[101]} At about 1000 meters, the temperature and salinty gradient becomes nearly constant, and pressure takes over as the prevailing factor affecting sound velocity.~\textsuperscript{[101]} This causes sound waves to bend back and forth as travel above and below the sound speed minima threshold, allowing them to potentially travel across entire ocean basins without being absorbed by the seafloor or ocean surface.~\textsuperscript{[101]}}
 
+% SOFAR Channel diagram
+% ***** NOTE: REPLACE *****
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/sofar.jpg}
+    \caption{A placeholder graphic of the SOFAR channel.}
+    \label{figure27}
+\end{figure}
 
 % ----- 2B. TOPOGRAPHY -----
-\newpage % <----- TEMPORARY
 \subsection{Topography}
 
 % Digital elevation models
+
+\par{}
+
 % Digital terrain models
 % Digital surface models
 % Photogrammetry
@@ -1085,10 +1103,22 @@
     \item{“Ultra short baseline acoustic receiver/processor,” in ResearchGate, doi: 10.1109/OCEANSE.2005.1513262.}
 
     % 98
-    \item {“Seabed Mapping: A Brief History from Meaningful Words.” Accessed: Jun. 06, 2025. [Online]. Available: https://www.mdpi.com/2076-3263/10/7/273}
+    \item{“Seabed Mapping: A Brief History from Meaningful Words.” Accessed: Jun. 06, 2025. [Online]. Available: https://www.mdpi.com/2076-3263/10/7/273}
 
     % 99
-    \item {I. O. Ferreira, "Bathymetric Surveys: Improvements and Barriers," Hydro International, Oct. 6, 2022. [Online]. Available: https://www.hydro-international.com/content/article/bathymetric-surveys-improvements-and-barriers}
+    \item{I. O. Ferreira, "Bathymetric Surveys: Improvements and Barriers," Hydro International, Oct. 6, 2022. [Online]. Available: https://www.hydro-international.com/content/article/bathymetric-surveys-improvements-and-barriers}
+
+    % 100
+    \item{I. O. Ferreira, L. C. D. Andrade, V. G. Teixeira, and F. C. M. Santos, “State of art of bathymetric surveys,” Bol. Ciênc. Geod., vol. 28, no. 1, p. e2022002, 2022, doi: 10.1590/s1982-21702022000100002.}
+
+    % 101
+    \item{H. Morin, “Sound Travel in the SOFAR Channel,” Discovery of Sound in the Sea. Accessed: Jun. 06, 2025. [Online]. Available: https://dosits.org/science/movement/sofar-channel/sound-travel-in-the-sofar-channel/}
+
+    % 102
+    \item{H. Morin, “Sound Travel in the SOFAR Channel,” Discovery of Sound in the Sea. Accessed: Jun. 06, 2025. [Online]. Available: https://dosits.org/science/movement/sofar-channel/sound-travel-in-the-sofar-channel/}
+
+    % 103
+    \item{“Autonomous Underwater Glider.” Accessed: Jun. 06, 2025. [Online]. Available: https://www.teledynemarine.com/products/product-line/autonomous-underwater-glider}
 
 \end{enumerate}
 
