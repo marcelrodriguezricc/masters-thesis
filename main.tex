@@ -367,7 +367,7 @@
 
 % Biologically induced morphology
 
-\par{Coastal zone biota, where present and abundant, have a significant effect on local geomorphology. Mangroves and seagrass protect coastlines from erosive processes and enhance accretion---roots and branches encourage the settling of fine-silts, attenuate wave action, and dampen current velocities, while fallen detritus increases the organic matter of sediments.~\textsuperscript{[16]}~\textsuperscript{[33]}~\textsuperscript{[34]} Coral reefs act as a natural breakwater to dissipate wave energy (on average \textasciitilde97\%) away from shore, protecting coastal areas from daily erosion from marine processes and episodic extreme erosion from natural disasters.~\textsuperscript{[35]}~\textsuperscript{[36]}~\textsuperscript{[37]} Coral reefs trap sediment, which may pile above the HHW to develop a sub-aerial component and form a cay---an island which may eventually become host to vegetation and soil.~\textsuperscript{[38]} Coral reefs barriers can also form lagoons. Later on, we will conversely discuss geomorphological influences on biological zonation as well.  }
+\par{Coastal zone biota, where present and abundant, have a significant effect on local geomorphology. Mangroves and seagrass protect coastlines from erosive processes and enhance accretion---roots and branches encourage the settling of fine-silts, attenuate wave action, and dampen current velocities, while fallen detritus increases the organic matter of sediments.~\textsuperscript{[16]}~\textsuperscript{[33]}~\textsuperscript{[34]} Coral reefs act as a natural breakwater to dissipate wave energy (on average \textasciitilde97\%) away from shore, protecting coastal areas from daily erosion from marine processes and episodic extreme erosion from natural disasters.~\textsuperscript{[35]}~\textsuperscript{[36]}~\textsuperscript{[37]} Coral reefs trap sediment, which may pile above the HHW to develop a sub-aerial component and form a cay---an island which may eventually become host to vegetation and soil.~\textsuperscript{[38]} Coral reefs barriers can also form lagoons. Later on, we will conversely discuss geomorphological influences on biological zonation as well.}
 
 % Geographical effects on erosional / depositional: Trialing edge, roaring 40s, etc...
 
@@ -580,10 +580,11 @@
 
 \par{Most RADAR systems are constrained to a single band to reduce complexity and bulk---the propagation characteristics of radiation from different bands demand different hardware specifications and signal processing algorithms. The compactness, low-cost, and resolution of X-band RADAR makes it a popular choice for non-spaceborne platforms.~\textsuperscript{[71]} The current compliment of earth monitoring satellites deploy a variety single-band sensors---while Sentinel 1A and B deploy C-band SAR for land and ocean monitoring, ALOS 2 uses the L-band for forest and disaster monitoring.~\textsuperscript{[72]}~\textsuperscript{[73]} However, an upcoming project by NASA and the Indian Space Research Organization (ISRO) will deploy the first dual-band (L and S) SAR for unprecendentedly high-resolution (5-10m) observation of various earth processes.~\textsuperscript{[74]}}
 
-% RADAR Platforms
+% Other imaging and RADAR platforms
 % ***** NOTE: NEEDS WORK, IMUS, INS *****
 
 \par{RADAR is also deployed from a variety of airborne, shipborne, and land-based platforms. These platforms offer higher spatial resolution, dwell, and penetration, at the cost of swath range.}
+
 
 % Furuno X-Band Radar at COPR
 
@@ -728,6 +729,9 @@
     \label{figure27}
 \end{figure}
 
+% Proximal sensing and sensing from the ground
+% ***** NOTE: GNSS, THEODOLITE, ETC *****
+
 % ----- 2B. TOPOGRAPHY -----
 \subsection{Topography}
 
@@ -753,17 +757,16 @@
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{images/us-topo-goleta.png}
-    \caption{A topographical map of Goleta, CA generated using ArcGIS, with data from the USGS Topo Program. Sources: Esri, TomTom, Garmin, FAO, NOAA, USGS, (c). OpenStreetMap contributors, and the GIS User Community, Copyright© 2013 National}
+    \caption{A topographic map of Goleta, CA generated using ArcGIS, with data from the USGS Topo Program. Sources: Esri, TomTom, Garmin, FAO, NOAA, USGS, (c). OpenStreetMap contributors, and the GIS User Community, Copyright© 2013 National}
     \label{figure29}
 \end{figure}
 
 % Digital elevation models
 % ***** NOTE: NEEDS EDITING AND CITATION *****
-% ***** WRITE ABOUT HOW DEMS INFORM REMOTE SENSING *****
 
 \subsubsection{Digital Elevation Models}
 
-\par{Topographic products have expanded to include three-dimensional representations of surface geometry expressed as a Digital Elevation Model (DEM).~\textsuperscript{[107]} Several definitions for DEM exist based on the user's frame of reference for a particular use-case, but for our purposes we will adopt the definition that a DEM is a statistical representation of the continuous surface of some natural terrain, that has been measured and then abstracted through mathematical assumption to obtain a nominal digital model of that terrain.~\textsuperscript{[107]} As they pertain to GIS software, a DEM data is typically formatted as a raster image type data structure, or a two-dimensional array of values, where each value corresponds to the elevation at a square area on the Earth's surface.~\textsuperscript{[107]} The dataset is primarily rendered as a grayscale image, where for each pixel brightness represents elevation height and spatial extent represents a square unit of the Earth's surface area.~\textsuperscript{[107]} Raw DEM raster images are extended to derive a variety of products for increased visual clarity and analysis. A gradient of hues may be applied to raw DEM data, or a DEM may be represented three-dimensionally and combined with image data to create a realistic digital rendering. DEMS are used to map and analyse other phenomena that have a strong elevation, slope, and aspect components. For environmental science, a few applied use-cases include---hazard mapping of damaging processes like floods, landslides, and erosion, and informing models such as snow accumulation, watershed, species distribution, and habitat modeling.~\textsuperscript{[108]}~\textsuperscript{[109]}~\textsuperscript{[110]} A DEM requires associated metadata, including a global coordinate and a coordinate reference system.~\textsuperscript{[107]} }
+\par{Topographic products have expanded to include three-dimensional representations of surface geometry expressed as a Digital Elevation Model (DEM).~\textsuperscript{[107]} Several definitions for DEM exist based on the user's frame of reference for a particular use-case, but for our purposes we will adopt the definition that a DEM is a statistical representation of the continuous surface of some natural terrain, that has been measured and then abstracted through mathematical assumption to obtain a nominal digital model of that terrain.~\textsuperscript{[107]} As they pertain to GIS software, a DEM data is typically formatted as a raster image type data structure, or a two-dimensional array of values, where each value corresponds to the elevation at a square area on the Earth's surface.~\textsuperscript{[107]} The dataset is primarily rendered as a grayscale image, where for each pixel brightness represents elevation height and spatial extent represents a square unit of the Earth's surface area.~\textsuperscript{[107]} To be generated, a DEM requires associated metadata in addition to the dataset of sampled height measurements natural terrain, including---temporal data, a global coordinate system, and a coordinate reference system.~\textsuperscript{[107]}} 
 
 % DEM Examples
 % ***** NOTE: GENERATE OWN FIGURE *****
@@ -775,17 +778,60 @@
     \label{figure30}
 \end{figure}
 
-\subsubsection{Digital Terrain Models}
+\subsubsection{DEM products}
+
+\par{Raw DEM raster images are used to derive a variety of products for increased visual clarity---for example a color gradient may be applied to encode height, or the height data may be rendered as a three-dimensional digital object that can be draped with image data to create a realistic digital visualization of the originl terrain.~\textsuperscript{[112]} DEMS are used to map and analyse other phenomena that have a strong elevation, slope, and aspect components. For environmental science, a few applied use-cases include---hazard mapping of damaging processes like floods, landslides, and erosion, and informing models such as snow accumulation, watershed, species distribution, and habitat modeling.~\textsuperscript{[108]}~\textsuperscript{[109]}~\textsuperscript{[110]}~\textsuperscript{[111]}}
+
+% Orthorectified example
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/orthorectified.jpg}
+    \caption{A view captured from an oblique angle (for example, 25°, left) must be corrected for relief displacement caused by terrain to generate the orthorectified view (looking straight down, right).}
+    \label{figure31}
+\end{figure}
+
+\subsubsection{Orthorectification}
+
+% DEMs as a correction tool for other remote sensors,
+\par{DEMS are used to geometrically correct satellite imagery through the process of orthorectification---i.e. the removal terrain-induced distortions caused by topographic relief, earth curvature, and other errors in the sensing process.~\textsuperscript{[113]}~\textsuperscript{[114]} Orthorectification combines a model of the sensor being used with detailed information on the sensor's positionality while obtaining an image, and uses an external DEM to geometrically correct pixels by displacement.~\textsuperscript{[115]} This technique has been applied by government satellite programs to their open-source Earth imagery datasets---for example, DEMs were used to orthorectify multispectral imagery from the Sentinel-2 satellite, to bring geometric accuracy of points was within an error of 10.5m with 95.5\% confidence.~\textsuperscript{[113]}~\textsuperscript{[114]} However, orthorectification is a relatively new method, the accuracy of which is still in question, especially when used to georeference remotely sensed images from high relief terrain (mountainous regions).~\textsuperscript{[113]}~\textsuperscript{[114]}}
+
+\subsubsection{Data fusion}
+
+% Data fusion
+\par{Currently, the most commonly utilized public elevation datasets include---ALOS DEM, SRTM DEM, ASTER GDEM, and TanDEM-X, offering spatial resolutions between 30 - 90m.~\textsuperscript{[113]}~\textsuperscript{[114]}~\textsuperscript{[116]} Different DEMs offer height data gathered from a variety of different sensors and platforms, and exhibit advantages for representing certain environments more accurately than others. Higher-resolution DEMs improve the geometric correction of satellite imagery during orthorectification by providing more detailed topographic information, which leads to more accurate pixel geolocation.~\textsuperscript{[113]}~\textsuperscript{[114]}~\textsuperscript{[115]} Merging multiple DEM sources can help fill spatial gaps, reduce errors, and improve vertical accuracy, thereby increasing the reliability of the corrected imagery.~\textsuperscript{[113]}~\textsuperscript{[114]} This technique is called data fusion, and has been validated to increase the overall accuracy of orthorectification.~\textsuperscript{[113]}~\textsuperscript{[114]} Data fusion also occurs at the stage of DEM generation, when datasets gathered variety of different terrain height measuring techniques---such as laser altimetry, stereo imagery, and theodolite triangulation---are combined to fill gaps and reduce errors in the same way.~\textsuperscript{[116]}}
 
 % Digital terrain models
 
-% Digital surface models
+\subsubsection{Digital Terrain and Surface Models}
+
+\par{DEM is a generic term to describe a digital representation of surface elevation, from which two major types of elevation models can be specified: Digital Terrain Models (DTM) and Digital Surface Models (DSMs).~\textsuperscript{[118]} A DSM model the surfaces of the top-most extent of the ground the of all objects arising from it, including treetops, buildings, and exposed ground.~\textsuperscript{[118]} DTMs represent the terrain elevation of the lithosphere, or bare-earth surface, excluing objects such as vegetation or buildings.~\textsuperscript{[118]} Sensors such as LiDAR and RADAR can sometimes penetrate surface features like tree-canopies to directly sample ground elevation, but DTMs may also be derived from DSMs using other sources of height measurement features like buildings and trees by sustraction.~\textsuperscript{[120]}}
+
+% Radar canopy penetation
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/canopy-penetration.png}
+    \caption{A diagram describing how different RADAR bands can be used to penetrate and sample from beneath forest canopy, as compared to what is obtained by optical sensing.}
+    \label{figure32}
+\end{figure}
+
+\par{DEM is a generic term to describe a digital representation of surface elevation, from which two major types of elevation models can be specified: Digital Terrain Models (DTM) and Digital Surface Models (DSMs).~\textsuperscript{[118]} A DSM models the surfaces of the top-most extent of the ground and all objects arising from it, including treetops, buildings, and exposed ground.~\textsuperscript{[118]} DTMs represent the terrain elevation of the lithosphere, or bare-earth surface, excluding objects such as vegetation or buildings.~\textsuperscript{[118]} Sensors such as LiDAR and RADAR can sometimes penetrate surface objects to directly sample ground elevation, but DTMs may also be derived from DSMs through subtraction using other sources of height measurement for features like buildings and trees.~\textsuperscript{[119]} There are obvious tradeoffs here when using either one or the other to perform an environmental analysis---a DSM may be analyzed for applications urban and network coverage planning, while a DTM may be more effective for watershed analysis or ground stability monitoring.~\textsuperscript{[119]}}
+
+% DTM vs DSM diagram
+% ***** NOTE: GENERATE OWN GRAPHIC HERE *****
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/dsm-dtm.png}
+    \caption{A digram depticting the difference between a Digital Terrain Model and Digital Surface Model.}
+    \label{figure33}
+\end{figure}
+
 % Photogrammetry
 % Orthographic mapping
 % Coastal science applications
 % Dune mapping / aeolian transport
 % Sentinel 1 & 2 Satellites
-% Data fusion
 
 % ----- 2C. BATHYMETRY -----
 
@@ -1187,6 +1233,37 @@
 
     % 110
     \item{L. Zhang et al., “Using DEM to predict Abies faxoniana and Quercus aquifolioides distributions in the upstream catchment basin of the Min River in southwest China,” Ecological Indicators, vol. 69, pp. 91–99, Oct. 2016, doi: 10.1016/j.ecolind.2016.04.008.}
+
+    % 111
+    \item{R. G. Thannoun, A. K. S. Bety, and L. K. Al-Sa’igh, “Identifying Alluvial fans features using multispectral image processing northern Iraq,” 2016.}
+
+    % 112
+    \item{“(PDF) Coastal hazard related to landslide distribution derived from morphotectonic analysis (SW Gulf of Corinth, Greece),” in ResearchGate, Accessed: Jun. 08, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/268074280_Coastal_hazard_related_to_landslide_distribution_derived_from_morphotectonic_analysis_SW_Gulf_of_Corinth_Greece}}
+
+    % 113
+    \item{R. Liu, J. Zhu, N. Jiao, F. Wang, H. You, and Y. Xiang, “Analysis of the fluence of multi-sources DEM in remote sensing image ortho-rectification,” in International Conference on Remote Sensing, Mapping, and Image  Processing (RSMIP 2024), R. Bilas Pachori and L. Chen, Eds., Xiamen, China: SPIE, Jun. 2024, p. 7. doi: 10.1117/12.3029617.}
+
+    % 114
+    \item{C. Ressl and N. and Pfeifer, “Evaluation of the elevation model influence on the orthorectification of Sentinel-2 satellite images over Austria,” European Journal of Remote Sensing, vol. 51, no. 1, pp. 693–709, Jan. 2018, doi: 10.1080/22797254.2018.1478676.}
+
+    % 115
+    \item{“What is orthorectified imagery?,” Esri. Accessed: Jun. 08, 2025. [Online]. Available: \url{https://www.esri.com/about/newsroom/insider/what-is-orthorectified-imagery}}
+
+    % 116
+    \item{C. H. Grohmann, “Evaluation of TanDEM-X DEMs on selected Brazilian sites: Comparison with SRTM, ASTER GDEM and ALOS AW3D30,” Remote Sensing of Environment, vol. 212, pp. 121–133, Jun. 2018, doi: 10.1016/j.rse.2018.04.043.}
+
+    % 117
+    \item{C. H. Grohmann, “Evaluation of TanDEM-X DEMs on selected Brazilian sites: Comparison with SRTM, ASTER GDEM and ALOS AW3D30,” Remote Sensing of Environment, vol. 212, pp. 121–133, Jun. 2018, doi: 10.1016/j.rse.2018.04.043.}
+
+    % 118
+    \item{“Digital Elevation Models,” ResearchGate. Accessed: Jun. 08, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/346902099_Digital_Elevation_Models}}
+
+    % 119
+    \item{“Elevation Modeling - the differences between DTM, DSM & DEM,” Plex-Earth Support Desk. Accessed: Jun. 08, 2025. [Online]. Available: \url{https://support.plexearth.com/hc/en-us/articles/4642425453201-Elevation-Modeling-the-differences-between-DTM-DSM-DEM}}
+
+    % 120
+    \item{“Estimation of Forest Parameters Using 3D Satellite Data. Stereogrammetry, radargrammetry and interferometry,” ResearchGate. Accessed: Jun. 08, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/269575726_Estimation_of_Forest_Parameters_Using_3D_Satellite_Data_Stereogrammetry_radargrammetry_and_interferometry}}
+
 
 \end{enumerate}
 \end{sloppypar}
