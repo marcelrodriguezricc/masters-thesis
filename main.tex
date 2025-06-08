@@ -731,16 +731,59 @@
 % ----- 2B. TOPOGRAPHY -----
 \subsection{Topography}
 
+\subsubsection{Topographic maps}
+
+% Topographic Maps
+
+\par{Narrowly, a topographic map depicts the relief features, or terrain, of land surfaces according to a geodetic reference frame.~\textsuperscript{[104]}~\textsuperscript{[105]} Traditionally, topograpghic maps focused on the depiction of terrain geometry quantitatively through the use of contour lines and qualitatively through hypsometric tints and relief shading, but also included---boundaries of significant surface features such as bodies of water and man-made structures, symbols representing landmarks, and toponymy.~\textsuperscript{[104]}~\textsuperscript{[105]} International government agencies have historically collaborated to decide and maintain strict mapping standards, related to various map parameters---including geodetic base information, scale, symbology, and content---to inform a large number of applications---such as infrastructure planning and management, resource analysis, and military planning.~\textsuperscript{[105]}~\textsuperscript{[106]} An important epoch for the implementation of mathematical methods such as geodetic triangulation and scale reduction in map creation was the publishing of the Carte géométrique de la France (Geometric Map of France) by the Cassini family in 1789 as commissioned by Louis XV, which popularized the practice of creating state-sponsored topographic maps for environmental understanding and land management.~\textsuperscript{[106]}}
+
+\subsubsection{Geographic information systems}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/carte-geometrique.jpg}
+    \caption{A section of Carte géométrique de la France, depicting the Pyrenees mountain range on the border of Spain and France.}
+    \label{figure28}
+\end{figure}
+
+% Geographic Information Systems
+
+\par{As universities gained access to computer systems in the 1960s, Geographic Information Systems (GIS) software was developed by researchers to store, retrieve, and process spatial data to report geographic information through maps and charts, marking a significant change the way topographical maps are created and used.~\textsuperscript{[106]} Today, the vast majority of topographic products such as spatial maps and terrain models are digitally generated from large spatial datasets compiled and maintained by a range of sources---including scientific, commercial, and government organizations.~\textsuperscript{[106]} Data that informs these}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/us-topo-goleta.png}
+    \caption{A topographical map of Goleta, CA generated using ArcGIS, with data from the USGS Topo Program. Sources: Esri, TomTom, Garmin, FAO, NOAA, USGS, (c). OpenStreetMap contributors, and the GIS User Community, Copyright© 2013 National}
+    \label{figure29}
+\end{figure}
+
 % Digital elevation models
 
-\par{}
+\subsubsection{Digital Elevation Models}
+
+\par{Topographic products have expanded to include three-dimensional representations of surface geometry expressed as a Digital Elevation Model (DEM).~\textsuperscript{[107]} Several definitions for DEM exist based on the user's frame of reference for a particular use-case, but for our purposes we will adopt the definition that a DEM is a statistical representation of the continuous surface of some natural terrain, that has been measured and then abstracted through mathematical assumption to obtain a nominal digital model of that terrain.~\textsuperscript{[107]} As they pertain to GIS software, a DEM data is typically formatted as a raster image type data structure, or a two-dimensional array of values, where each value corresponds to the elevation at a square area on the Earth's surface.~\textsuperscript{[107]} The dataset is primarily rendered as a grayscale image, where for each pixel brightness represents elevation height and spatial extent represents a square unit of the Earth's surface area.~\textsuperscript{[107]} Raw DEM raster images are extended to derive a variety of products for increased visual clarity and analysis. A gradient of hues may be applied to raw DEM data, or a DEM may be represented three-dimensionally and combined with image data to create a realistic digital rendering. DEMS are also used to model other environmental phenomena with strong correlation to elevation. A DEM requires associated metadata, including a global coordinate and a coordinate reference system.~\textsuperscript{[107]} }
+
+% DEM Examples
+% ***** NOTE: GENERATE OWN FIGURE *****
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{images/dem-examples.png}
+    \caption{Digital elevation models analysis. A: Raw DEM, B: Shaded relief Hill shading, C: Auto delineation stream, D: Extract intersect drainage points.}
+    \label{figure30}
+\end{figure}
+
+\subsubsection{Digital Terrain Models}
 
 % Digital terrain models
+
 % Digital surface models
 % Photogrammetry
 % Orthographic mapping
+% Coastal science applications
 % Dune mapping / aeolian transport
 % Sentinel 1 & 2 Satellites
+% Data fusion
 
 % ----- 2C. BATHYMETRY -----
 
@@ -781,7 +824,7 @@
 
 \newpage
 \fancyhead[C]{REFERENCE}
-\fancyfoot[C]{\thepage} 
+\fancyfoot[C]{}
 \thispagestyle{fancy}
 \section{Reference}
 
@@ -1121,6 +1164,18 @@
 
     % 103
     \item{“Autonomous Underwater Glider.” Accessed: Jun. 06, 2025. [Online]. Available: \url{https://www.teledynemarine.com/products/product-line/autonomous-underwater-glider}}
+
+    % 104
+    \item{“Topographic Maps: Methodological Approaches for Analyzing Cartographic Style,” ResearchGate, doi: 10.1080/15420350903001187.}
+
+    % 105
+    \item{C. D. Vvalcott, “DEPARTMENT OF THE INTERIOR UNITED STATES GEOLOGICAL SURVEY”.}
+
+    % 106
+    \item{“Topographic Mapping: Past, Present and Future,” ResearchGate, Dec. 2024, Accessed: Jun. 07, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/331459473_Topographic_Mapping_Past_Present_and_Future}}
+
+    % 107
+    \item{P. L. Guth et al., “Digital Elevation Models: Terminology and Definitions,” Remote Sensing, vol. 13, no. 18, Art. no. 18, Jan. 2021, doi: 10.3390/rs13183581.}
 
 \end{enumerate}
 \end{sloppypar}
