@@ -801,21 +801,25 @@
 % Data fusion
 \par{Currently, the most commonly utilized public elevation datasets include---ALOS DEM, SRTM DEM, ASTER GDEM, and TanDEM-X, offering spatial resolutions between 30 - 90m.~\textsuperscript{[113]}~\textsuperscript{[114]}~\textsuperscript{[116]} Different DEMs offer height data gathered from a variety of different sensors and platforms, and exhibit advantages for representing certain environments more accurately than others. Higher-resolution DEMs improve the geometric correction of satellite imagery during orthorectification by providing more detailed topographic information, which leads to more accurate pixel geolocation.~\textsuperscript{[113]}~\textsuperscript{[114]}~\textsuperscript{[115]} Merging multiple DEM sources can help fill spatial gaps, reduce errors, and improve vertical accuracy, thereby increasing the reliability of the corrected imagery.~\textsuperscript{[113]}~\textsuperscript{[114]} This technique is called data fusion, and has been validated to increase the overall accuracy of orthorectification.~\textsuperscript{[113]}~\textsuperscript{[114]} Data fusion also occurs at the stage of DEM generation, when datasets gathered variety of different terrain height measuring techniques---such as laser altimetry, stereo imagery, and theodolite triangulation---are combined to fill gaps and reduce errors in the same way.~\textsuperscript{[116]}}
 
-% Digital terrain models
-
 \subsubsection{Digital Terrain and Surface Models}
+
+% DTMS and DSMS
 
 \par{DEM is a generic term to describe a digital representation of surface elevation, from which two major types of elevation models can be specified: Digital Terrain Models (DTM) and Digital Surface Models (DSMs).~\textsuperscript{[118]} A DSM model the surfaces of the top-most extent of the ground the of all objects arising from it, including treetops, buildings, and exposed ground.~\textsuperscript{[118]} DTMs represent the terrain elevation of the lithosphere, or bare-earth surface, excluing objects such as vegetation or buildings.~\textsuperscript{[118]} Sensors such as LiDAR and RADAR can sometimes penetrate surface features like tree-canopies to directly sample ground elevation, but DTMs may also be derived from DSMs using other sources of height measurement features like buildings and trees by sustraction.~\textsuperscript{[120]}}
 
 % Radar canopy penetation
+% ***** NOTE: FIX CITATION *****
+
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{images/canopy-penetration.png}
-    \caption{A diagram describing how different RADAR bands can be used to penetrate and sample from beneath forest canopy, as compared to what is obtained by optical sensing.}
+    \caption{A diagram describing how different RADAR bands can be used to penetrate and sample from beneath forest canopy, as compared to what is obtained by optical sensing from ~\textsuperscript{[120]}}
     \label{figure32}
 \end{figure}
 
-\par{DEM is a generic term to describe a digital representation of surface elevation, from which two major types of elevation models can be specified: Digital Terrain Models (DTM) and Digital Surface Models (DSMs).~\textsuperscript{[118]} A DSM models the surfaces of the top-most extent of the ground and all objects arising from it, including treetops, buildings, and exposed ground.~\textsuperscript{[118]} DTMs represent the terrain elevation of the lithosphere, or bare-earth surface, excluding objects such as vegetation or buildings.~\textsuperscript{[118]} Sensors such as LiDAR and RADAR can sometimes penetrate surface objects to directly sample ground elevation, but DTMs may also be derived from DSMs through subtraction using other sources of height measurement for features like buildings and trees.~\textsuperscript{[119]} There are obvious tradeoffs here when using either one or the other to perform an environmental analysis---a DSM may be analyzed for applications urban and network coverage planning, while a DTM may be more effective for watershed analysis or ground stability monitoring.~\textsuperscript{[119]}}
+% DTM and DSMs 
+
+\par{Sensors such as LiDAR and RADAR can sometimes penetrate surface objects to directly sample ground elevation, but DTMs may also be derived from DSMs using other sources of height measurement of features like buildings and trees.~\textsuperscript{[119]}~\textsuperscript{[120]} There are obvious tradeoffs here when using either one or the other to perform an environmental analysis---a DSM may be analyzed for applications urban and network coverage planning, while a DTM may be more effective for watershed analysis or ground stability monitoring.~\textsuperscript{[119]} Performing combinatory operations on a DSM and DTM of the same area can be used to obtain other models, for example through subtraction to obtain a Canopy Height Model (CHM).~\textsuperscript{[120]}}
 
 % DTM vs DSM diagram
 % ***** NOTE: GENERATE OWN GRAPHIC HERE *****
