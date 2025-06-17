@@ -94,11 +94,17 @@
 \end{center}
 \doublespacing
 
-\par{Most megacities are located in the Low Elevation Coastal Zone (LECZ), which represents 2\% of the world’s total land area and 11\% of the global population. The number of people living in the LECZ has increased by 200 million from 1990 to 2015 and is projected to reach 1 billion people by 2050. These areas are especially vulnerable to the effects of coastal processes such as sea level rise, coastal erosion, and flooding, exacerbated by warming global climates. The goal of coastal science is to characterize these processes to inform coastal management projects and other applied use cases. Coastal environments are exceptionally dynamic---there are several marine and land processes that occur on a range of spatio-temporal scales to influence the hydro- and morphological profile to various extents across discrete coastal sections. The spatio-temporal sampling requirements for characterizing coastal processes, coupled with the volatile nature of the area, make in-situ sampling difficult and traditional remote sensing techniques ineffective. Therefore, bespoke remote sensing solutions are required.}
+\par{The earliest record of coastal human settlement dates back to the Middle Stone Age, on sections of the African coast that have since been continulously inhabited for over 100,000 years. The biological and behaviroal evolution of Homo Spaiens as a result of adaptation to coastal environments is a deeply studied field of inquiry. Coasts provide for civilization in several ways---including as an abundant source of food and energy resources, and as a gateway for travel, commerce, exploration, and recreation. Humanity's most prolific polymaths: Plato, Aristotle, Galileo Galilei, Rene Descartes, Issac Newton, Daniel Bernoulli, and Pierre-Simon Laplace, have sought to explain phenomena that occurs at the coast. Our understanding of coastal processes has been intrisically linked to our development as a civilization and species; a trend which continues today.}
 
-\par{Our goal is to aggregate knowledge and review modern practices that pertain to remote sensing of coastal environments for oceanographic, geological, and ecological field research in order to provide a framework for developing low-cost integrated remote sensing systems for coastal survey and monitoring.}
+\par{Most megacities are located in the Low Elevation Coastal Zone (LECZ), which 
+represents 2\% of the world’s total land area inhabited by 11\% of the global population.~\textsuperscript{[121]} The number of people living in the LECZ has increased by 200 million from 1990 to 2015, and is projected to reach 1 billion people by 2050.~\textsuperscript{[121]} These areas are especially vulnerable to the damaging effects of coastal processes that are exacerbated by warming global climates---such as sea level rise, coastal erosion, 
+and flooding---and so there exists a need for informed solutions to mitigate the impact the ocean has on us and vice versa.~\textsuperscript{[122]} The goal of coastal science is to characterize these processes to inform coastal management projects and other applied use cases.~\textsuperscript{[7]} Coastal environments are exceptionally dynamic---there are several marine and land processes that occur on a range of spatio-temporal scales to influence the hydro- and morphological profile to various extents across discrete coastal sections.~\textsuperscript{[4]} The spatio-temporal sampling requirements for characterizing coastal processes, coupled with the volatile nature of the area, make in-situ sampling difficult and available remote sensing techniques ineffective.~\textsuperscript{[7]} Therefore, novel remote sensing solutions are required.}
+
+\par{Our goal is to aggregate knowledge and review modern practices that pertain to remote sensing of coastal environments for oceanographic and geomorphological field research in order to provide a framework for developing low-cost integrated remote sensing systems for coastal survey and monitoring.}
 
 \par{A multidisciplinary approach that incorporates biological, physical, and chemical data gathered through a combination of remote sensing, ground truth observations, and numerical models subject to data assimilation techniques is currently the optimal method for characterizing coastal phenomena. Data fusion algorithms that integrate data from disparate sensor types deployed in conjunction are used to produce more accurate and detailed information. There is an international network of remote sensing systems that deploy a variety of sensors (e.g., radar, sonar, and multispectral image sensors) from a range of platforms (e.g., spaceborne, airborne, shipborne, and land-based) to compile robust open-source datasets that facilitate coastal research. However, models are currently limited by a lack of data pertaining to particular environmental parameters, and the extent and regularity of high-resolution data collection projects. The scientific coastal monitoring and survey network must be expanded to address this need. Recent technological advancements---including heightened accuracy and decreased footprint of sensors and microprocessors, increased coverage of GNSS and internet services, and implementation of machine learning techniques for data processing—have enabled the development of scalable remote sensing solutions that may be used to expand the global network of environmental survey and monitoring systems.}
+
+\par{To that end, we will outline coastal processes, the remote sensing technologies able to sample them, the   }
 
 % ----- TABLE OF CONTENTS -----
 
@@ -107,29 +113,37 @@
 \thispagestyle{fancy}
 \begin{enumerate}
     \item{Coastal processes}
-    \begin{enumerate}
-        \item{Hydrology}
-        \item{Morphology}
-        \item{Ecology}
-        \item{Anthropology}
-    \end{enumerate}
+        \begin{enumerate}
+        \item{Hydrodynamic}
+        \item{Morphodynamic}
+        \end{enumerate}
 
-    \item{Sampling and modeling}
-    \begin{enumerate}
-        \item{Technology}
+    \item{Remote Sensing}
+        \begin{enumerate}
+        \item{Electromagnetic Imaging}
+        \item{RADAR}
+        \item{LiDAR}
+        \item{Sonar}
+        \end{enumerate}
+
+    \item{Models}
+        \begin{enumerate}
         \item{Topography}
         \item{Bathymetry}
         \item{Hydrology}
-        \item{Ecology}
-    \end{enumerate}
+        \end{enumerate}
 
-    \item Proposed solutions
-    \begin{enumerate}
-        \item{Survey pole with MBES \& dual antenna GPS}
-        \item{Large quadrotor for bathymetric LiDAR}
-        \item{Miniature quadrotor}
-        \item{Virtual drone development platform}
-    \end{enumerate}
+    \item{Solutions}
+        \begin{enumerate}
+        \item{Hydrodynamic}
+        \item{Morphodynamic}
+        \end{enumerate}
+
+    \item{Conclusion}
+        \begin{enumerate}
+        \item{Summary}
+        \item{Our work}
+        \end{enumerate}
 
     \item{References}
     \item{Appendix}
@@ -416,25 +430,21 @@
 
 % ***** NOTE - TALK ABOUT DATA FUSION OF SATELLITE WITH PROXIMAL SENSORS ****
 
-
-% ----- 2A. TECHNOLOGY -----
-
-\subsection{Technology}
-
-\subsubsection{Classification of remote sensors}
-
 % How remote sensors are classified
 % ***** NOTE: NEEDS MORE *****
 
 \par{There are more specific classifiers for remote sensors that are distinguishable from one another according to the signals they detect, which properties of those signals are measured, and the output representation of that information. A single remote sensing device may exhibit several classifiers, and some classifiers share overlapping features with one another.}
 
-\subsubsection{Imaging sensors}
+\subsection{Electromagnetic Imaging}
+
+\subsubsection{Optical imaging}
 
 % Intro to electromagnetic imaging sensors, photographic camera
+% **** NOTE: MORE DESCRIPTION OF CURRENT OPTICAL IMAGING TECH AND PLATFORMS, USE FOR COASTAL MONITORING *****
 
 \par{The most well represented remote sensors are imaging sensors of electromgnetic radiation---those which acquire two-dimensional arrays of radiant intensity values from the incident electromagnetic field. The first and most omnipresent imaging sensor is the photographic camera, which acquires optical images of visible light, or radiant energy from the visible band of the electromagnetic spectrum.~\textsuperscript{[48]}~\textsuperscript{[49]}~\textsuperscript{[50]} The first photograph was taken by Daguerre and Niepce in 1839, and one decade later in 1849, Colonel Aimé Laussedat of the French Army Corps of Engineers developed a program to use oblique photography for topographic mapping.~\textsuperscript{[48]}~\textsuperscript{[50]}  The next decade, Gaspard Tournachon took photographs of Paris from a hot-air balloon looking straight down at the ground, marking the beginning of vertical airborne photography, the technique most commonly associated with remote sensing.~\textsuperscript{[48]}~\textsuperscript{[50]}}
 
-% Graph of broad electromagntic radiation bands
+% Graph of broad electromagnetic radiation bands
 
 \begin{figure}
     \centering
@@ -497,7 +507,7 @@
     \label{figure15}
 \end{figure}
 
-\subsubsection{RADAR}
+\subsection{RADAR}
 
 % RADAR
 
@@ -599,7 +609,7 @@
     \label{figure20}
 \end{figure}
 
-\subsubsection{LiDAR}
+\subsection{LiDAR}
 
 % LiDAR
 
@@ -853,9 +863,9 @@
 % NOAA LiDAR bathymetry
 % Sub-aqueous photogrammetry
 
-% ----- 2D. HYDROLOGY -----
+% ----- 2D. HYDRODYNAMICS -----
 
-\subsection{Hydrology}
+\subsection{Hydrodyanmics}
 
 % Waves from Camera: Lippmann et al 1996, Agaard and Holm 1989, Harbitz 1994, Stockdon and Holman 2000
 % Wave from Radar: Izquierdo and Soares 2004
@@ -864,15 +874,6 @@
 % US IOOS HF Radar
 % Copernicus Marine Viewer
 % Echosounder ice monitoring
-
-% ----- 2E. ECOLOGY -----
-
-\subsection{Ecology}
-
-% Resource investigation
-% Aquatic biogeochemistry
-% Biomass estimation
-% Dynamic monitoring
 
 % ----- 3. CONCLUSION -----
 
@@ -1253,6 +1254,11 @@
     % 120
     \item{“Estimation of Forest Parameters Using 3D Satellite Data. Stereogrammetry, radargrammetry and interferometry,” ResearchGate. Accessed: Jun. 08, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/269575726_Estimation_of_Forest_Parameters_Using_3D_Satellite_Data_Stereogrammetry_radargrammetry_and_interferometry}}
 
+    % 121
+    \item{B. Neumann, A. T. Vafeidis, J. Zimmermann, and R. J. Nicholls, “Future Coastal Population Growth and Exposure to Sea-Level Rise and Coastal Flooding - A Global Assessment,” PLOS ONE, vol. 10, no. 3, p. e0118571, Mar. 2015, doi: 10.1371/journal.pone.0118571.}
+
+    % 122
+    \item{“The Coming Perfect Storm: Diminishing Sustainability of Coastal Human-Natural Systems in the Anthropocene.” Accessed: Jun. 17, 2025. [Online]. Available: \url{https://www.researchgate.net/publication/373057991_The_Coming_Perfect_Storm_Diminishing_Sustainability_of_Coastal_Human-Natural_Systems_in_the_Anthropocene}}
 
 \end{enumerate}
 \end{sloppypar}
